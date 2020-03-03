@@ -16,6 +16,21 @@ public class NewTest {
 		System.out.println("Hello World!");
 	}
 	
+	@Test
+	public void launchChromeDriver() {
+
+		Assert.assertEquals(driver.getTitle(), "Google", "An incorrect page was loaded.");
+		
+	}
+	
+	@Test
+	public void canClickLuckyButton() {
+		
+		WebElement luckyButton  =  driver.findElement(By.id("gbqfbb"));
+		luckyButton.click();
+				
+	}
+	
 	@BeforeTest
 	public void beforeTest() {
 
@@ -34,21 +49,6 @@ public class NewTest {
 		
 		driver.quit();
 		
-	}
-
-	@Test
-	public void launchChromeDriver() {
-
-		Assert.assertEquals(driver.getTitle(), "Google", "An incorrect page was loaded.");
-		
-	}
-	
-	@Test
-	public void canClickLuckyButton() {
-		
-		WebElement luckyButton  =  driver.findElement(By.id("gbqfbb"));
-		luckyButton.click();
-				
 	}
 
 }
