@@ -8,13 +8,13 @@ import com.qtx.driver.DriverType;
 public abstract class TestSuperClass {
 
 	protected WebDriver driver;
+	
+	protected String baseUrl;
 
 	@BeforeTest
 	public void beforeTest() {
 		driver = DriverManagerFactory.getManager(DriverType.CHROME).getDriver();
-
-		String url = "http://the-internet.herokuapp.com";
-		driver.get(url);
+		baseUrl = "http://the-internet.herokuapp.com";
 	}
 
 	@AfterTest

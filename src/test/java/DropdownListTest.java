@@ -1,8 +1,8 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import com.qtx.pages.DropDownPageObject;
+
 
 public class DropdownListTest extends TestSuperClass{
 
@@ -12,22 +12,13 @@ public class DropdownListTest extends TestSuperClass{
 	@Test
 	public void canSelectFromDrowdown() {
 		
-
 		String expectedSelection = "Option 2";
-				
-		WebElement dropDownButton = driver.findElement(By.linkText("Dropdown"));
-		dropDownButton.click();
-
-		//WebElement dropDown = driver.findElement(By.id("dropdown"));
-		//WebElement secondOption = driver.findElement(By.linkText("Option 2"));
-
-		Select customerDropDownList = new Select(driver.findElement(By.id("dropdown")));
-		customerDropDownList.selectByIndex(2);
-
-		//dropDown.click();
-		//secondOption.click();
-
-		String actualSelection = customerDropDownList.getFirstSelectedOption().getText();
+		
+		//act
+		String actualSelection = new DropDownPageObject(driver, baseUrl)
+				.OpenDropdownPage()
+				.setDropDownList(expectedSelection)
+				.getDropDownListTextValue();
 
 		Assert.assertEquals(actualSelection, expectedSelection, "Failed to click Option 2!");
 	}
