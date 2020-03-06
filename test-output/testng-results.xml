@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10368" started-at="2020-03-05T17:58:14 PST" finished-at="2020-03-05T17:58:24 PST">
+  <suite name="Default suite" duration-ms="9761" started-at="2020-03-06T15:18:34 PST" finished-at="2020-03-06T15:18:43 PST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10368" started-at="2020-03-05T17:58:14 PST" finished-at="2020-03-05T17:58:24 PST">
-      <class name="CheckBoxTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:CheckBoxTest@49fc609f]" name="beforeTest" is-config="true" duration-ms="5916" started-at="2020-03-05T17:58:14 PST" finished-at="2020-03-05T17:58:20 PST">
+    <test name="Default test" duration-ms="9761" started-at="2020-03-06T15:18:34 PST" finished-at="2020-03-06T15:18:43 PST">
+      <class name="TheInternet">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@49fc609f]" name="beforeTest" is-config="true" duration-ms="5770" started-at="2020-03-06T15:18:34 PST" finished-at="2020-03-06T15:18:39 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canClickCheckBoxes()[pri:0, instance:CheckBoxTest@49fc609f]" name="canClickCheckBoxes" duration-ms="3653" started-at="2020-03-05T17:58:20 PST" finished-at="2020-03-05T17:58:23 PST">
+        <test-method status="PASS" signature="canClickCheckBoxes()[pri:0, instance:TheInternet@49fc609f]" name="canClickCheckBoxes" duration-ms="1739" started-at="2020-03-06T15:18:39 PST" finished-at="2020-03-06T15:18:41 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canClickCheckBoxes -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:CheckBoxTest@49fc609f]" name="afterTest" is-config="true" duration-ms="766" started-at="2020-03-05T17:58:23 PST" finished-at="2020-03-05T17:58:24 PST">
+        <test-method status="PASS" signature="canLogIn()[pri:0, instance:TheInternet@49fc609f]" name="canLogIn" duration-ms="1032" started-at="2020-03-06T15:18:41 PST" finished-at="2020-03-06T15:18:42 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canLogIn -->
+        <test-method status="PASS" signature="canSelectFromDrowdown()[pri:0, instance:TheInternet@49fc609f]" name="canSelectFromDrowdown" duration-ms="504" started-at="2020-03-06T15:18:42 PST" finished-at="2020-03-06T15:18:43 PST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canSelectFromDrowdown -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@49fc609f]" name="afterTest" is-config="true" duration-ms="680" started-at="2020-03-06T15:18:43 PST" finished-at="2020-03-06T15:18:43 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- CheckBoxTest -->
+      </class> <!-- TheInternet -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

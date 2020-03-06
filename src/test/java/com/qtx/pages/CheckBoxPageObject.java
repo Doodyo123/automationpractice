@@ -19,36 +19,37 @@ public class CheckBoxPageObject extends SuperPageObject{
 	}
 
 	public CheckBoxPageObject openCheckBoxPage() {
+		
 		String url = "/checkboxes";
 		Navigate(url);
 		return this;
+		
 	}
 	
-	public CheckBoxPageObject selectCheckBox(String value) {
-		if(value == "checkbox 1") {
-			checkBoxOne.click();
-		}
-		else if (value == "checkbox 2") {
-			checkBoxTwo.click();
-		} 
+	public CheckBoxPageObject selectCheckBoxOne() {
+		
+		checkBoxOne.click();
 		return this;
-	}
-	
-	public boolean isCheckBoxClicked(String textValue) {
-		
-		if(textValue == "checkbox 1") {
-			return checkBoxOne.isSelected();
-		}
-		else if (textValue == "checkbox 2") {
-			return checkBoxTwo.isSelected();
-		} else {
-			return false;
-		}
 		
 	}
 	
+	public CheckBoxPageObject selectCheckBoxTwo() {
+		
+		checkBoxTwo.click();
+		return this;
+		
+	}
 	
+	public boolean isCheckBoxOneSelected() {
+		
+		return checkBoxOne.isSelected();
+		
+	}
 	
-	
+	public boolean isCheckBoxTwoSelected() {
+		
+		return checkBoxTwo.isSelected();
+		
+	}
 
 }
