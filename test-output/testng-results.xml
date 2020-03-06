@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8637" started-at="2020-03-05T09:10:40 PST" finished-at="2020-03-05T09:10:49 PST">
+  <suite name="Default suite" duration-ms="8887" started-at="2020-03-05T16:49:36 PST" finished-at="2020-03-05T16:49:45 PST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8637" started-at="2020-03-05T09:10:40 PST" finished-at="2020-03-05T09:10:49 PST">
+    <test name="Default test" duration-ms="8887" started-at="2020-03-05T16:49:36 PST" finished-at="2020-03-05T16:49:45 PST">
       <class name="DropdownListTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:DropdownListTest@49fc609f]" name="beforeTest" is-config="true" duration-ms="5866" started-at="2020-03-05T09:10:40 PST" finished-at="2020-03-05T09:10:46 PST">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:DropdownListTest@49fc609f]" name="beforeTest" is-config="true" duration-ms="5950" started-at="2020-03-05T16:49:36 PST" finished-at="2020-03-05T16:49:42 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canSelectFromDrowdown()[pri:0, instance:DropdownListTest@49fc609f]" name="canSelectFromDrowdown" duration-ms="2093" started-at="2020-03-05T09:10:46 PST" finished-at="2020-03-05T09:10:48 PST">
+        <test-method status="PASS" signature="canSelectFromDrowdown()[pri:0, instance:DropdownListTest@49fc609f]" name="canSelectFromDrowdown" duration-ms="2155" started-at="2020-03-05T16:49:42 PST" finished-at="2020-03-05T16:49:45 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canSelectFromDrowdown -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:DropdownListTest@49fc609f]" name="afterTest" is-config="true" duration-ms="653" started-at="2020-03-05T09:10:48 PST" finished-at="2020-03-05T09:10:49 PST">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:DropdownListTest@49fc609f]" name="afterTest" is-config="true" duration-ms="742" started-at="2020-03-05T16:49:45 PST" finished-at="2020-03-05T16:49:45 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
