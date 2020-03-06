@@ -20,7 +20,7 @@ public class DropDownPageObject extends SuperPageObject{
 		
 	}
 	
-	public DropDownPageObject OpenDropdownPage() {
+	public DropDownPageObject openDropdownPage() {
 		String url = "/dropdown";
 		Navigate(url);
 		return this;

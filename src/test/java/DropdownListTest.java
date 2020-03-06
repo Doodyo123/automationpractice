@@ -16,7 +16,7 @@ public class DropdownListTest extends TestSuperClass{
 		
 		//act
 		String actualSelection = new DropDownPageObject(driver, baseUrl)
-				.OpenDropdownPage()
+				.openDropdownPage()
 				.setDropDownList(expectedSelection)
 				.getDropDownListTextValue();
 

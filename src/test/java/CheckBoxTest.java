@@ -15,16 +15,18 @@ public class CheckBoxTest extends TestSuperClass{
 	public void canClickCheckBoxes() {
 		String checkBoxOneText = "checkbox 1";
 		String checkBoxTwoText = "checkbox 2";
-		boolean expected = true;
 		
 		
-		boolean isChecked = new CheckBoxPageObject(driver, baseUrl)
+		CheckBoxPageObject page = new CheckBoxPageObject(driver, baseUrl)
 		.openCheckBoxPage()
-		.selectCheckBoxOne(checkBoxOneText)
-		.unselectCheckBoxTwo(checkBoxTwoText)
-		.isCheckBoxClicked();
+		.selectCheckBox(checkBoxOneText)
+		.selectCheckBox(checkBoxTwoText);
+		
+		boolean check1 = page.isCheckBoxClicked(checkBoxOneText);
+		boolean check2 = page.isCheckBoxClicked(checkBoxTwoText);
 	
-		System.out.println(isChecked);
-		Assert.assertEquals(isChecked, expected, "Failed to select checkbox one!");
+		Assert.assertEquals(check1, true, "Failed to select checkbox one!");
+
+		Assert.assertEquals(check2, false, "Failed to select checkbox one!");
 	}
 }

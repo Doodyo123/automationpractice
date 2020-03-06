@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8887" started-at="2020-03-05T16:49:36 PST" finished-at="2020-03-05T16:49:45 PST">
+  <suite name="Default suite" duration-ms="10368" started-at="2020-03-05T17:58:14 PST" finished-at="2020-03-05T17:58:24 PST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8887" started-at="2020-03-05T16:49:36 PST" finished-at="2020-03-05T16:49:45 PST">
-      <class name="DropdownListTest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:DropdownListTest@49fc609f]" name="beforeTest" is-config="true" duration-ms="5950" started-at="2020-03-05T16:49:36 PST" finished-at="2020-03-05T16:49:42 PST">
+    <test name="Default test" duration-ms="10368" started-at="2020-03-05T17:58:14 PST" finished-at="2020-03-05T17:58:24 PST">
+      <class name="CheckBoxTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:CheckBoxTest@49fc609f]" name="beforeTest" is-config="true" duration-ms="5916" started-at="2020-03-05T17:58:14 PST" finished-at="2020-03-05T17:58:20 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canSelectFromDrowdown()[pri:0, instance:DropdownListTest@49fc609f]" name="canSelectFromDrowdown" duration-ms="2155" started-at="2020-03-05T16:49:42 PST" finished-at="2020-03-05T16:49:45 PST">
+        <test-method status="PASS" signature="canClickCheckBoxes()[pri:0, instance:CheckBoxTest@49fc609f]" name="canClickCheckBoxes" duration-ms="3653" started-at="2020-03-05T17:58:20 PST" finished-at="2020-03-05T17:58:23 PST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canSelectFromDrowdown -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:DropdownListTest@49fc609f]" name="afterTest" is-config="true" duration-ms="742" started-at="2020-03-05T16:49:45 PST" finished-at="2020-03-05T16:49:45 PST">
+        </test-method> <!-- canClickCheckBoxes -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:CheckBoxTest@49fc609f]" name="afterTest" is-config="true" duration-ms="766" started-at="2020-03-05T17:58:23 PST" finished-at="2020-03-05T17:58:24 PST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- DropdownListTest -->
+      </class> <!-- CheckBoxTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
