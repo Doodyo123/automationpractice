@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import com.qtx.pages.CheckBoxPageObject;
 import com.qtx.pages.DropDownPageObject;
+import com.qtx.pages.HorizontalSliderPageObject;
 import com.qtx.pages.LoginPageObject;
 
 public class TheInternet extends TestSuperClass{
@@ -63,7 +64,25 @@ public class TheInternet extends TestSuperClass{
 				.setDropDownList(expectedSelection)
 				.getDropDownListTextValue();
 
+		
 		Assert.assertEquals(actualSelection, expectedSelection, "Failed to click Option 2!");
+	}
+	
+	// As a user
+	// I want to move the slider to the max value
+	// So I can prove that I know how to use the Actions builder
+	@Test
+	public void canMoveSliderToMaxValue() throws InterruptedException {
+		
+		String expectedSliderValue = "5";
+		
+		String sliderValue = new HorizontalSliderPageObject(driver, baseUrl)
+		.openHorizontalSliderPage()
+		.setHorizontalSliderToMax()
+		.getSliderValue();
+		
+		Assert.assertEquals(sliderValue, expectedSliderValue);
+		Thread.sleep(10000);
 	}
 
 }
