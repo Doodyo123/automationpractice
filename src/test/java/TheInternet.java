@@ -16,7 +16,6 @@ public class TheInternet extends TestSuperClass{
 	@Test
 	public void canClickCheckBoxes() {
 
-
 		CheckBoxPageObject page = new CheckBoxPageObject(driver, baseUrl)
 				.openCheckBoxPage()
 				.selectCheckBoxOne();
@@ -26,6 +25,7 @@ public class TheInternet extends TestSuperClass{
 
 		Assert.assertEquals(checkOne, true, "Failed to select checkbox one!");
 		Assert.assertEquals(checkTwo, true, "Failed to select checkbox one!");
+		
 	}
 
 	// As a user
@@ -34,18 +34,15 @@ public class TheInternet extends TestSuperClass{
 	@Test
 	public void canLogIn() {
 
-		// arrange
 		String userName = new String("tomsmith");
 		String password = new String("SuperSecretPassword!");
 		String expectedGreenBoxText = new String("You logged into a secure area!\n×");
 
-		// act
 		String actualGreenBoxText = new LoginPageObject(driver, baseUrl)
 				.OpenLoginPage() //from LoginPageObject
 				.login(userName, password) //from LoginPageObject
 				.getLoginConfirmationMessage(); // from SecurePageObject
 
-		// assert
 		Assert.assertEquals(actualGreenBoxText , expectedGreenBoxText, "Can not Log in!");
 
 	}
@@ -64,8 +61,8 @@ public class TheInternet extends TestSuperClass{
 				.setDropDownList(expectedSelection)
 				.getDropDownListTextValue();
 
-		
 		Assert.assertEquals(actualSelection, expectedSelection, "Failed to click Option 2!");
+		
 	}
 	
 	// As a user
@@ -82,7 +79,7 @@ public class TheInternet extends TestSuperClass{
 		.getSliderValue();
 		
 		Assert.assertEquals(sliderValue, expectedSliderValue);
-		Thread.sleep(10000);
+		
 	}
 
 }
