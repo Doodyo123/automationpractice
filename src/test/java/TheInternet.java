@@ -18,13 +18,21 @@ public class TheInternet extends TestSuperClass{
 
 		CheckBoxPageObject page = new CheckBoxPageObject(driver, baseUrl)
 				.openCheckBoxPage()
-				.selectCheckBoxOne();
+				.selectCheckBoxOne()
+				.selectCheckBoxTwo();
 
 		boolean checkOne = page.isCheckBoxOneSelected();
 		boolean checkTwo = page.isCheckBoxTwoSelected();
+		
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		Assert.assertEquals(checkOne, true, "Failed to select checkbox one!");
-		Assert.assertEquals(checkTwo, true, "Failed to select checkbox one!");
+		Assert.assertEquals(checkTwo, false, "Failed to select checkbox two!");
 		
 	}
 

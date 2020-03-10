@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8120" started-at="2020-03-10T12:16:04 PDT" finished-at="2020-03-10T12:16:12 PDT">
+  <suite name="Default suite" duration-ms="20539" started-at="2020-03-10T13:19:36 PDT" finished-at="2020-03-10T13:19:57 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8120" started-at="2020-03-10T12:16:04 PDT" finished-at="2020-03-10T12:16:12 PDT">
+    <test name="Default test" duration-ms="20539" started-at="2020-03-10T13:19:36 PDT" finished-at="2020-03-10T13:19:57 PDT">
       <class name="TheInternet">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@3a883ce7]" name="beforeTest" is-config="true" duration-ms="5687" started-at="2020-03-10T12:16:04 PDT" finished-at="2020-03-10T12:16:09 PDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@49fc609f]" name="beforeTest" is-config="true" duration-ms="5864" started-at="2020-03-10T13:19:36 PDT" finished-at="2020-03-10T13:19:42 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canMoveSliderToMaxValue()[pri:0, instance:TheInternet@3a883ce7]" name="canMoveSliderToMaxValue" duration-ms="1723" started-at="2020-03-10T12:16:09 PDT" finished-at="2020-03-10T12:16:11 PDT">
+        <test-method status="PASS" signature="canClickCheckBoxes()[pri:0, instance:TheInternet@49fc609f]" name="canClickCheckBoxes" duration-ms="11825" started-at="2020-03-10T13:19:42 PDT" finished-at="2020-03-10T13:19:54 PDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canClickCheckBoxes -->
+        <test-method status="PASS" signature="canLogIn()[pri:0, instance:TheInternet@49fc609f]" name="canLogIn" duration-ms="1010" started-at="2020-03-10T13:19:54 PDT" finished-at="2020-03-10T13:19:55 PDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canLogIn -->
+        <test-method status="PASS" signature="canMoveSliderToMaxValue()[pri:0, instance:TheInternet@49fc609f]" name="canMoveSliderToMaxValue" duration-ms="675" started-at="2020-03-10T13:19:55 PDT" finished-at="2020-03-10T13:19:56 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canMoveSliderToMaxValue -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@3a883ce7]" name="afterTest" is-config="true" duration-ms="684" started-at="2020-03-10T12:16:11 PDT" finished-at="2020-03-10T12:16:12 PDT">
+        <test-method status="PASS" signature="canSelectFromDrowdown()[pri:0, instance:TheInternet@49fc609f]" name="canSelectFromDrowdown" duration-ms="429" started-at="2020-03-10T13:19:56 PDT" finished-at="2020-03-10T13:19:56 PDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canSelectFromDrowdown -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@49fc609f]" name="afterTest" is-config="true" duration-ms="686" started-at="2020-03-10T13:19:56 PDT" finished-at="2020-03-10T13:19:57 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
