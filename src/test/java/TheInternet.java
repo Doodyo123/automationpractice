@@ -71,12 +71,16 @@ public class TheInternet extends TestSuperClass{
 	@Test
 	public void canMoveSliderToMaxValue() throws InterruptedException {
 		
-		String expectedSliderValue = "5";
+		HorizontalSliderPageObject page = new HorizontalSliderPageObject(driver, baseUrl);
 		
-		String sliderValue = new HorizontalSliderPageObject(driver, baseUrl)
+		
+		float sliderValue = page
 		.openHorizontalSliderPage()
 		.setHorizontalSliderToMax()
 		.getSliderValue();
+		
+
+		float expectedSliderValue = page.getSliderMaxValue();
 		
 		Assert.assertEquals(sliderValue, expectedSliderValue);
 		
