@@ -1,10 +1,12 @@
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.qtx.pages.CheckBoxPageObject;
 import com.qtx.pages.DropDownPageObject;
 import com.qtx.pages.HorizontalSliderPageObject;
+import com.qtx.pages.InputPage;
 import com.qtx.pages.LoginPageObject;
 
 public class TheInternet extends TestSuperClass{
@@ -24,13 +26,6 @@ public class TheInternet extends TestSuperClass{
 		boolean checkOne = page.isCheckBoxOneSelected();
 		boolean checkTwo = page.isCheckBoxTwoSelected();
 		
-		try {
-			Thread.sleep(10000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 		Assert.assertEquals(checkOne, true, "Failed to select checkbox one!");
 		Assert.assertEquals(checkTwo, false, "Failed to select checkbox two!");
 		
@@ -77,7 +72,7 @@ public class TheInternet extends TestSuperClass{
 	// I want to move the slider to the max value
 	// So I can prove that I know how to use the Actions builder
 	@Test
-	public void canMoveSliderToMaxValue() throws InterruptedException {
+	public void canMoveSliderToMaxValue() {
 		
 		HorizontalSliderPageObject page = new HorizontalSliderPageObject(driver, baseUrl);
 		
@@ -92,6 +87,25 @@ public class TheInternet extends TestSuperClass{
 		
 		Assert.assertEquals(sliderValue, expectedSliderValue);
 		
+	}
+	
+	// As a user
+	// I want to enter values in the input box
+	// So I can prove I know how to use data provider
+	@Test(dataProvider="numberData")
+	public void canInputNumbers(int number) {
+		
+		int actualNumberInput = new InputPage(driver, baseUrl)
+				.navigate()
+				.setInputValue(number)
+				.getInputValue();
+		
+		Assert.assertEquals(actualNumberInput, number);
+	}
+	
+	@DataProvider(name = "numberData")
+	public Object[] getNumberData() {
+		return new Object[] { 2, 3, 5, 8, 13 };
 	}
 
 }

@@ -1,33 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="23081" started-at="2020-03-10T17:17:59 PDT" finished-at="2020-03-10T17:18:22 PDT">
+  <suite name="Suite" duration-ms="11709" started-at="2020-03-11T11:58:27 PDT" finished-at="2020-03-11T11:58:38 PDT">
     <groups>
     </groups>
-    <test name="Test" duration-ms="23081" started-at="2020-03-10T17:17:59 PDT" finished-at="2020-03-10T17:18:22 PDT">
+    <test name="Test" duration-ms="11709" started-at="2020-03-11T11:58:27 PDT" finished-at="2020-03-11T11:58:38 PDT">
       <class name="TheInternet">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@49fc609f]" name="beforeTest" is-config="true" duration-ms="7709" started-at="2020-03-10T17:17:59 PDT" finished-at="2020-03-10T17:18:07 PDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@3b084709]" name="beforeTest" is-config="true" duration-ms="5891" started-at="2020-03-11T11:58:27 PDT" finished-at="2020-03-11T11:58:33 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canClickCheckBoxes()[pri:0, instance:TheInternet@49fc609f]" name="canClickCheckBoxes" duration-ms="12304" started-at="2020-03-10T17:18:07 PDT" finished-at="2020-03-10T17:18:19 PDT">
+        <test-method status="PASS" signature="canClickCheckBoxes()[pri:0, instance:TheInternet@3b084709]" name="canClickCheckBoxes" duration-ms="1800" started-at="2020-03-11T11:58:33 PDT" finished-at="2020-03-11T11:58:34 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canClickCheckBoxes -->
-        <test-method status="PASS" signature="canLogIn()[pri:0, instance:TheInternet@49fc609f]" name="canLogIn" duration-ms="1189" started-at="2020-03-10T17:18:19 PDT" finished-at="2020-03-10T17:18:20 PDT">
+        <test-method status="PASS" signature="canInputNumbers(int)[pri:0, instance:TheInternet@3b084709]" name="canInputNumbers" duration-ms="303" started-at="2020-03-11T11:58:34 PDT" data-provider="numberData" finished-at="2020-03-11T11:58:35 PDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canInputNumbers -->
+        <test-method status="PASS" signature="canInputNumbers(int)[pri:0, instance:TheInternet@3b084709]" name="canInputNumbers" duration-ms="283" started-at="2020-03-11T11:58:35 PDT" data-provider="numberData" finished-at="2020-03-11T11:58:35 PDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canInputNumbers -->
+        <test-method status="PASS" signature="canInputNumbers(int)[pri:0, instance:TheInternet@3b084709]" name="canInputNumbers" duration-ms="291" started-at="2020-03-11T11:58:35 PDT" data-provider="numberData" finished-at="2020-03-11T11:58:35 PDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canInputNumbers -->
+        <test-method status="PASS" signature="canInputNumbers(int)[pri:0, instance:TheInternet@3b084709]" name="canInputNumbers" duration-ms="242" started-at="2020-03-11T11:58:35 PDT" data-provider="numberData" finished-at="2020-03-11T11:58:36 PDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canInputNumbers -->
+        <test-method status="PASS" signature="canInputNumbers(int)[pri:0, instance:TheInternet@3b084709]" name="canInputNumbers" duration-ms="275" started-at="2020-03-11T11:58:36 PDT" data-provider="numberData" finished-at="2020-03-11T11:58:36 PDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canInputNumbers -->
+        <test-method status="PASS" signature="canLogIn()[pri:0, instance:TheInternet@3b084709]" name="canLogIn" duration-ms="899" started-at="2020-03-11T11:58:36 PDT" finished-at="2020-03-11T11:58:37 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canLogIn -->
-        <test-method status="PASS" signature="canMoveSliderToMaxValue()[pri:0, instance:TheInternet@49fc609f]" name="canMoveSliderToMaxValue" duration-ms="721" started-at="2020-03-10T17:18:20 PDT" finished-at="2020-03-10T17:18:21 PDT">
+        <test-method status="PASS" signature="canMoveSliderToMaxValue()[pri:0, instance:TheInternet@3b084709]" name="canMoveSliderToMaxValue" duration-ms="635" started-at="2020-03-11T11:58:37 PDT" finished-at="2020-03-11T11:58:37 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canMoveSliderToMaxValue -->
-        <test-method status="PASS" signature="canSelectFromDrowdown()[pri:0, instance:TheInternet@49fc609f]" name="canSelectFromDrowdown" duration-ms="405" started-at="2020-03-10T17:18:21 PDT" finished-at="2020-03-10T17:18:21 PDT">
+        <test-method status="PASS" signature="canSelectFromDrowdown()[pri:0, instance:TheInternet@3b084709]" name="canSelectFromDrowdown" duration-ms="375" started-at="2020-03-11T11:58:37 PDT" finished-at="2020-03-11T11:58:38 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canSelectFromDrowdown -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@49fc609f]" name="afterTest" is-config="true" duration-ms="698" started-at="2020-03-10T17:18:21 PDT" finished-at="2020-03-10T17:18:22 PDT">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@3b084709]" name="afterTest" is-config="true" duration-ms="670" started-at="2020-03-11T11:58:38 PDT" finished-at="2020-03-11T11:58:38 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

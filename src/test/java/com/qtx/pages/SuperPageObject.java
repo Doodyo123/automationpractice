@@ -1,7 +1,9 @@
 package com.qtx.pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public abstract class SuperPageObject {
 
@@ -22,5 +24,8 @@ public abstract class SuperPageObject {
 		
 	}
 	
-
+	protected Select getSelect(WebElement element) {
+		return new Select(element);
+	}
+	
 }
