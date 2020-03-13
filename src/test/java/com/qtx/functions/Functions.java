@@ -26,6 +26,7 @@ public class Functions {
 		
 	}
 	
+	//Returns an element from a group of elements
 	public List<WebElement> getGroupOfElementsByTagName(WebElement element, String tagName){
 		
 		return element.findElements(By.tagName(tagName));

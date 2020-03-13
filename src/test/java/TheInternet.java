@@ -9,6 +9,8 @@ import com.qtx.pages.HorizontalSliderPageObject;
 import com.qtx.pages.InputPage;
 import com.qtx.pages.LoginPageObject;
 
+import com.qtx.pages.HomePageObject;
+
 public class TheInternet extends TestSuperClass{
 
 	// As a user
@@ -106,6 +108,23 @@ public class TheInternet extends TestSuperClass{
 	@DataProvider(name = "numberData")
 	public Object[] getNumberData() {
 		return new Object[] { 2, 3, 5, 8, 13 };
+	}
+	
+	// As a user
+	// I want to be able to click Best Sellers
+	// So that I can view the best selling products
+	@Test
+	public void canViewBestSellers() {
+		boolean expectedButtonSelected = true;
+		
+		boolean buttonSelected = new HomePageObject(driver, otherUrl )
+				.openHomePage()
+				.getButtonOne()
+				.getButtonTwo()
+				.isButtonSelected();
+				
+		System.out.println(buttonSelected);
+		Assert.assertEquals(buttonSelected, expectedButtonSelected);
 	}
 
 }
