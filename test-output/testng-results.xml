@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="5" total="6" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11901" started-at="2020-03-13T13:35:19 PDT" finished-at="2020-03-13T13:35:31 PDT">
+  <suite name="Default suite" duration-ms="10862" started-at="2020-03-13T14:05:27 PDT" finished-at="2020-03-13T14:05:38 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11901" started-at="2020-03-13T13:35:19 PDT" finished-at="2020-03-13T13:35:31 PDT">
+    <test name="Default test" duration-ms="10862" started-at="2020-03-13T14:05:27 PDT" finished-at="2020-03-13T14:05:38 PDT">
       <class name="TheInternet">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@63e2203c]" name="beforeTest" is-config="true" duration-ms="5870" started-at="2020-03-13T13:35:19 PDT" finished-at="2020-03-13T13:35:25 PDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@63e2203c]" name="beforeTest" is-config="true" duration-ms="6772" started-at="2020-03-13T14:05:27 PDT" finished-at="2020-03-13T14:05:34 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canViewBestSellers()[pri:0, instance:TheInternet@63e2203c]" name="canViewBestSellers" duration-ms="5307" started-at="2020-03-13T13:35:25 PDT" finished-at="2020-03-13T13:35:30 PDT">
+        <test-method status="PASS" signature="canViewBestSellers()[pri:0, instance:TheInternet@63e2203c]" name="canViewBestSellers" duration-ms="3210" started-at="2020-03-13T14:05:34 PDT" finished-at="2020-03-13T14:05:37 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- canViewBestSellers -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@63e2203c]" name="afterTest" is-config="true" duration-ms="698" started-at="2020-03-13T13:35:30 PDT" finished-at="2020-03-13T13:35:31 PDT">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@63e2203c]" name="afterTest" is-config="true" duration-ms="842" started-at="2020-03-13T14:05:37 PDT" finished-at="2020-03-13T14:05:38 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
