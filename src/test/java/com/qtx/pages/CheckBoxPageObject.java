@@ -38,6 +38,7 @@ public class CheckBoxPageObject extends SuperPageObject{
 		
 		return function.getGroupOfElementsByTagName(element, tagName).get(index);
 		
+		
 	}
 
 	public CheckBoxPageObject selectCheckBoxOne() {

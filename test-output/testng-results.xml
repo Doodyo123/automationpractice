@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="5" total="6" passed="1">
+<testng-results skipped="0" failed="0" ignored="9" total="10" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10862" started-at="2020-03-13T14:05:27 PDT" finished-at="2020-03-13T14:05:38 PDT">
+  <suite name="Default suite" duration-ms="8883" started-at="2020-03-15T19:03:53 PDT" finished-at="2020-03-15T19:04:02 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10862" started-at="2020-03-13T14:05:27 PDT" finished-at="2020-03-13T14:05:38 PDT">
+    <test name="Default test" duration-ms="8883" started-at="2020-03-15T19:03:53 PDT" finished-at="2020-03-15T19:04:02 PDT">
       <class name="TheInternet">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@63e2203c]" name="beforeTest" is-config="true" duration-ms="6772" started-at="2020-03-13T14:05:27 PDT" finished-at="2020-03-13T14:05:34 PDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@6737fd8f]" name="beforeTest" is-config="true" duration-ms="6076" started-at="2020-03-15T19:03:53 PDT" finished-at="2020-03-15T19:03:59 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canViewBestSellers()[pri:0, instance:TheInternet@63e2203c]" name="canViewBestSellers" duration-ms="3210" started-at="2020-03-13T14:05:34 PDT" finished-at="2020-03-13T14:05:37 PDT">
+        <test-method status="PASS" signature="canClickJSPromptButton()[pri:0, instance:TheInternet@6737fd8f]" name="canClickJSPromptButton" duration-ms="2103" started-at="2020-03-15T19:03:59 PDT" finished-at="2020-03-15T19:04:02 PDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canViewBestSellers -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@63e2203c]" name="afterTest" is-config="true" duration-ms="842" started-at="2020-03-13T14:05:37 PDT" finished-at="2020-03-13T14:05:38 PDT">
+        </test-method> <!-- canClickJSPromptButton -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@6737fd8f]" name="afterTest" is-config="true" duration-ms="654" started-at="2020-03-15T19:04:02 PDT" finished-at="2020-03-15T19:04:02 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
