@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.qtx.pages.CheckBoxPageObject;
 import com.qtx.pages.DropDownPageObject;
+import com.qtx.pages.FramePageObject;
 import com.qtx.pages.HorizontalSliderPageObject;
 import com.qtx.pages.InputPage;
 import com.qtx.pages.JavaScriptAlertPage;
@@ -190,6 +191,19 @@ public class TheInternet extends TestSuperClass{
 		Assert.assertEquals(actualText, expectedText);
 	}
 
-
+	// As a user
+	// I want to get the text from each frame
+	// So that I can prove i know wow to get texts from a frame
+	@Test
+	public void canGetTextFromFrame() {
+		String frames[] = new String[4];
+		String expected[] = {"LEFT", "MIDDLE", "RIGHT", "BOTTOM"};
+		
+		frames = new FramePageObject(driver, baseUrl)
+				.openFramePage()
+				.getFrameText();
+		
+		Assert.assertEquals(frames, expected);
+	}
 
 }
