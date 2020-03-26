@@ -12,9 +12,6 @@ public class DropDownPageObject extends SuperPageObject{
 	@FindBy(id="dropdown")
 	private WebElement dropDown;
 	
-	
-	
-	
 	public DropDownPageObject(WebDriver driverInstance, String url) {
 		
 		super(driverInstance, url);
