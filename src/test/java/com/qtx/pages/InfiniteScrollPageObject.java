@@ -31,6 +31,7 @@ public class InfiniteScrollPageObject extends SuperPageObject{
 	}
 
 	public InfiniteScrollPageObject scrollDown() {
+		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
 		return this;
@@ -46,7 +47,6 @@ public class InfiniteScrollPageObject extends SuperPageObject{
 	}
 	
 
-
 	//Returns an element from a group of elements
 	public List<WebElement> getGroupOfElementsByTagName(WebElement element, String tagName){
 
@@ -57,7 +57,6 @@ public class InfiniteScrollPageObject extends SuperPageObject{
 	public WebElement getWebElement(WebElement element, String tagName, int index) {
 
 		return getGroupOfElementsByTagName(element, tagName).get(index);
-
 
 	}
 
@@ -72,6 +71,7 @@ public class InfiniteScrollPageObject extends SuperPageObject{
 			print = false;
 		}
 		return print;
+		
 	}
 
 

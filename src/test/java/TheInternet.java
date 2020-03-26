@@ -10,6 +10,8 @@ import com.qtx.pages.HorizontalSliderPageObject;
 import com.qtx.pages.InputPage;
 import com.qtx.pages.JavaScriptAlertPage;
 import com.qtx.pages.LoginPageObject;
+import com.qtx.pages.TablesPageObject;
+import com.qtx.pages.WindowsPageObject;
 import com.qtx.pages.DownloadPageObject;
 import com.qtx.pages.HoverPageObject;
 import com.qtx.pages.InfiniteScrollPageObject;
@@ -261,10 +263,39 @@ public class TheInternet extends TestSuperClass{
 		.getFirstDynamicParagraph()
 		.printDynamicText();
 		
-		Assert.assertEquals(actual, expected);
-		
+		Assert.assertEquals(didPrint, expected);
 		
 	}
-
 	
+	// As a user
+	// I want to grab text from another window
+	// so that I can prove I know how to handle windows
+	// Homework 7 - handles multiple web pages
+	@Test
+	public void canSwitchWindows() {
+		
+		String expectedText = "New Window";
+		String actualText = new WindowsPageObject(driver, baseUrl)
+		.openWindowsPageObject()
+		.clickButtonToOpenNewTab()
+		.grabTextFromNewTab()
+		.getText();
+		
+		Assert.assertEquals(actualText, expectedText);
+	}
+	
+	// As a user
+	// I want to get the amount due for jdoe@hotmail.com
+	// So that I can prove I know how to handle tables
+	// Homework 8 - handling tables
+	@Test 
+	public void canGetAmountDue() {
+		
+		String expected = "$100.00";
+		String actual = new TablesPageObject(driver, baseUrl)
+		.openTablesPage()
+		.getAmountDue();
+		
+		Assert.assertEquals(actual, expected);
+	}
 }

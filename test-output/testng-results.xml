@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="13" total="14" passed="1">
+<testng-results skipped="0" failed="0" ignored="15" total="16" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9889" started-at="2020-03-25T20:57:10 PDT" finished-at="2020-03-25T20:57:20 PDT">
+  <suite name="Default suite" duration-ms="9194" started-at="2020-03-26T13:40:13 PDT" finished-at="2020-03-26T13:40:23 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9889" started-at="2020-03-25T20:57:10 PDT" finished-at="2020-03-25T20:57:20 PDT">
+    <test name="Default test" duration-ms="9194" started-at="2020-03-26T13:40:13 PDT" finished-at="2020-03-26T13:40:23 PDT">
       <class name="TheInternet">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@6737fd8f]" name="beforeTest" is-config="true" duration-ms="5703" started-at="2020-03-25T20:57:10 PDT" finished-at="2020-03-25T20:57:16 PDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@6737fd8f]" name="beforeTest" is-config="true" duration-ms="5757" started-at="2020-03-26T13:40:13 PDT" finished-at="2020-03-26T13:40:19 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canPrintText()[pri:0, instance:TheInternet@6737fd8f]" name="canPrintText" duration-ms="3481" started-at="2020-03-25T20:57:16 PDT" finished-at="2020-03-25T20:57:19 PDT">
+        <test-method status="PASS" signature="canGetAmountDue()[pri:0, instance:TheInternet@6737fd8f]" name="canGetAmountDue" duration-ms="2720" started-at="2020-03-26T13:40:19 PDT" finished-at="2020-03-26T13:40:22 PDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canPrintText -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@6737fd8f]" name="afterTest" is-config="true" duration-ms="675" started-at="2020-03-25T20:57:19 PDT" finished-at="2020-03-25T20:57:20 PDT">
+        </test-method> <!-- canGetAmountDue -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@6737fd8f]" name="afterTest" is-config="true" duration-ms="688" started-at="2020-03-26T13:40:22 PDT" finished-at="2020-03-26T13:40:23 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
