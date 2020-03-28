@@ -1,4 +1,12 @@
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -208,14 +216,14 @@ public class TheInternet extends TestSuperClass{
 	public void canGetTextFromFrame() {
 		String frames[] = new String[4];
 		String expected[] = {"LEFT", "MIDDLE", "RIGHT", "BOTTOM"};
-		
+
 		frames = new FramePageObject(driver, baseUrl)
 				.openFramePage()
 				.getFrameText();
-		
+
 		Assert.assertEquals(frames, expected);
 	}
-	
+
 	// As a user
 	// I want to click the profile link
 	// so that I can navigate to my profile
@@ -223,15 +231,15 @@ public class TheInternet extends TestSuperClass{
 	@Test
 	public void canSelectProfileThree() {
 		String expectedUrl = "http://the-internet.herokuapp.com/users/3";
-		
+
 		String actualUrl =	new HoverPageObject(driver, baseUrl)
-		.openHoverPage()
-		.hoverToFigureThree()
-		.selectProfileThree();
-		
+				.openHoverPage()
+				.hoverToFigureThree()
+				.selectProfileThree();
+
 		Assert.assertEquals(actualUrl, expectedUrl);
 	}
-	
+
 	// As a user 
 	// I want to download the text file
 	// So that I can print the output
@@ -239,16 +247,16 @@ public class TheInternet extends TestSuperClass{
 	@Test
 	public void canDownloadTextFile() {
 		String expectedText = "check";
-		
+
 		String actualText = new DownloadPageObject(driver, baseUrl)
-		.openDownloadPage()
-		.selectTextFile()
-		.getTextFileText();
-		
+				.openDownloadPage()
+				.selectTextFile()
+				.getTextFileText();
+
 		Assert.assertEquals(actualText, expectedText);
-		
+
 	}
-	
+
 	// As a user
 	// I want to scroll and grab the first dynamic paragraph
 	// So that I know how to handle infinite scroll
@@ -256,46 +264,179 @@ public class TheInternet extends TestSuperClass{
 	@Test 
 	public void canPrintText() {
 		boolean expected = true;
-		
+
 		boolean didPrint = new InfiniteScrollPageObject(driver, baseUrl)
-		.openInfiniteScrollPage()
-		.scrollDown()
-		.getFirstDynamicParagraph()
-		.printDynamicText();
-		
+				.openInfiniteScrollPage()
+				.scrollDown()
+				.getFirstDynamicParagraph()
+				.printDynamicText();
+
 		Assert.assertEquals(didPrint, expected);
-		
+
 	}
-	
+
 	// As a user
 	// I want to grab text from another window
 	// so that I can prove I know how to handle windows
 	// Homework 7 - handles multiple web pages
 	@Test
 	public void canSwitchWindows() {
-		
+
 		String expectedText = "New Window";
 		String actualText = new WindowsPageObject(driver, baseUrl)
-		.openWindowsPageObject()
-		.clickButtonToOpenNewTab()
-		.grabTextFromNewTab()
-		.getText();
-		
+				.openWindowsPageObject()
+				.clickButtonToOpenNewTab()
+				.grabTextFromNewTab()
+				.getText();
+
 		Assert.assertEquals(actualText, expectedText);
 	}
-	
+
 	// As a user
 	// I want to get the amount due for jdoe@hotmail.com
 	// So that I can prove I know how to handle tables
 	// Homework 8 - handling tables
 	@Test 
 	public void canGetAmountDue() {
-		
+
 		String expected = "$100.00";
 		String actual = new TablesPageObject(driver, baseUrl)
-		.openTablesPage()
-		.getAmountDue();
-		
+				.openTablesPage()
+				.getAmountDue();
+
 		Assert.assertEquals(actual, expected);
+	}
+
+	// Execute Queries
+	// database_homework_2
+	@Test
+	public void canRunQueryTwo() throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("Driver loaded");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/sakila", "root", "1234");
+		System.out.println("Connected to MySQL DB");
+
+		Statement smt = con.createStatement();
+
+		ResultSet result = smt.executeQuery("SELECT DISTINCT title from sakila.film\r\n" + 
+				"WHERE title LIKE '%airplane%'");
+
+		while(result.next()) {
+
+			String title = result.getString("title");
+			System.out.println("Database record is " + title);
+		}
+		con.close();
+	}
+
+	// Execute Queries
+	// database_homework_7
+	@Test
+	public void canRunQuerySeven() throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("Driver loaded");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/sakila", "root", "1234");
+		System.out.println("Connected to MySQL DB");
+
+		String createProcedure = null;
+		String queryDrop = "DROP PROCEDURE IF EXISTS getInventory";
+
+		createProcedure = 
+				"create procedure getInventory()" +
+						"begin " +
+						"SELECT inventory_id, title, store_id FROM sakila.film AS A\r\n" + 
+						"LEFT JOIN sakila.inventory AS B\r\n" + 
+						"ON B.film_id = A.film_id\r\n" + 
+						"WHERE A.title = 'Alien Center'\r\n" + 
+						"AND B.store_id = 2;" +
+						"end";
+		Statement stmt = null;
+		Statement stmtDrop = null;
+
+		System.out.println("Calling Drop PROCEDURE");
+		stmtDrop = con.createStatement();
+		stmtDrop.execute(queryDrop);
+		if (stmtDrop!= null) {
+			stmtDrop.close();
+		}
+
+		stmt = con.createStatement();
+		stmt.executeUpdate(createProcedure);
+		if(stmt != null) {
+			stmt.close();
+		}
+
+		CallableStatement cs = null;
+		cs = con.prepareCall("{call getInventory}");
+		ResultSet rs = cs.executeQuery();
+
+		while(rs.next()) {
+
+			String id = rs.getString("inventory_id");
+			System.out.println("Database record is " + id);
+		}
+	}
+
+	// Execute Queries
+	// database_homework_8
+	@Test
+	public void canRunQueryEight() throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("Driver loaded");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/sakila", "root", "1234");
+		System.out.println("Connected to MySQL DB");
+		String insertQuery = "INSERT INTO store(store_id, manager_staff_id, address_id, last_update)\r\n" + 
+				"VALUES (4, 4, 4, '2006-02-15 04:57:12');";
+
+		con.setAutoCommit(false);
+		PreparedStatement updatedStore = con.prepareStatement(insertQuery);
+		updatedStore.executeUpdate();
+		con.commit();
+
+		con.close();
+	}
+
+	// Execute Queries
+	// database_homework_9
+	@Test
+	public void canRunQueryNine() throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("Driver loaded");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/sakila", "root", "1234");
+		System.out.println("Connected to MySQL DB");
+		String updateQuery = "UPDATE store\r\n" + 
+				"SET last_update = CURDATE()\r\n" + 
+				"WHERE store_id = 4;";
+
+		con.setAutoCommit(false);
+		PreparedStatement updatedStore = con.prepareStatement(updateQuery);
+		updatedStore.executeUpdate();
+		con.commit();
+
+		con.close();
+	}
+
+	// Execute Queries
+	// database_homework_10
+	@Test
+	public void canRunQueryTen() throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.jdbc.Driver");
+		System.out.println("Driver loaded");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/sakila", "root", "1234");
+		System.out.println("Connected to MySQL DB");
+		String deleteQuery = "DELETE FROM store\r\n" + 
+				"WHERE store_id = 3;";
+
+		con.setAutoCommit(false);
+		PreparedStatement updatedStore = con.prepareStatement(deleteQuery);
+		updatedStore.executeUpdate();
+		con.commit();
+
+		con.close();
 	}
 }
