@@ -1,0 +1,4 @@
+START TRANSACTION;
+DELETE FROM store
+WHERE store_id = 3;
+COMMIT;

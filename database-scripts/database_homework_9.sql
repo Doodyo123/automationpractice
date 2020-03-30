@@ -1,0 +1,5 @@
+START TRANSACTION;
+UPDATE store
+SET last_update = CURDATE()
+WHERE store_id = 3;
+COMMIT;
