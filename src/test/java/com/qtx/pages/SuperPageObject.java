@@ -25,7 +25,9 @@ public abstract class SuperPageObject {
 	}
 	
 	protected Select getSelect(WebElement element) {
+		
 		return new Select(element);
+		
 	}
 	
 }

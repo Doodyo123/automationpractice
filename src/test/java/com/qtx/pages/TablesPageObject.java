@@ -11,10 +11,11 @@ public class TablesPageObject extends SuperPageObject{
 	
 	@FindBy(id="table1")
 	private WebElement exampleOneTable;
-	
 	private WebElement tableBody;
+	
 	private List<WebElement> rows;
 	private List<WebElement> column;
+	
 	private String records;
 	
 	public TablesPageObject(WebDriver driverInstance, String baseUrl) {
@@ -27,6 +28,7 @@ public class TablesPageObject extends SuperPageObject{
 		
 		String url = "/tables";
 		Navigate(url);
+		
 		return this;
 		
 	}

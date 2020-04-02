@@ -12,7 +12,6 @@ public class InfiniteScrollPageObject extends SuperPageObject{
 
 	@FindBy(css="div[class='scroll large-8 columns large-centered']")
 	private WebElement groupedText;
-
 	private WebElement firstText;
 	private String dynamicText;
 
@@ -26,6 +25,7 @@ public class InfiniteScrollPageObject extends SuperPageObject{
 
 		String url = "/infinite_scroll";
 		Navigate(url);
+		
 		return this;
 
 	}
@@ -34,6 +34,7 @@ public class InfiniteScrollPageObject extends SuperPageObject{
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,350)", "");
+		
 		return this;
 
 	}
@@ -42,6 +43,7 @@ public class InfiniteScrollPageObject extends SuperPageObject{
 		
 		firstText = getWebElement(groupedText, "div", 0);
 		dynamicText = firstText.getText();
+		
 		return this;
 
 	}
@@ -70,6 +72,7 @@ public class InfiniteScrollPageObject extends SuperPageObject{
 		} else {
 			print = false;
 		}
+		
 		return print;
 		
 	}

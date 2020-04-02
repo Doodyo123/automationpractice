@@ -19,6 +19,7 @@ public class DropDownPageObject extends SuperPageObject{
 	}
 	
 	public DropDownPageObject openDropdownPage() {
+		
 		String url = "/dropdown";
 		Navigate(url);
 		return this;
@@ -39,8 +40,10 @@ public class DropDownPageObject extends SuperPageObject{
 	
 	//maps one UI control, the drop down and the second option.
 	public Select getDropDown() {
+		
 		Select customerDropDownList = new Select(dropDown);
 		return customerDropDownList;
+		
 	}
 
 	

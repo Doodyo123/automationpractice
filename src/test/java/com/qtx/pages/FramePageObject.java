@@ -24,6 +24,7 @@ public class FramePageObject extends SuperPageObject{
 	}
 
 	public String[] getFrameText() {
+		
 		String listOfText[] = new String[4];
 		nestedFrameButton.click();
 		NestedFramePageObject nestedFramePage = new NestedFramePageObject(driver,super.bassUrl);
@@ -36,7 +37,9 @@ public class FramePageObject extends SuperPageObject{
 		nestedFramePage.getDefault();
 		listOfText[3] = nestedFramePage.getBottomFrameText();
 		System.out.println(listOfText[1]);
+		
 		return listOfText;
+		
 	}
 
 }

@@ -1,12 +1,7 @@
 package com.qtx.pages;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
-import java.net.URL;
-import java.util.Scanner;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,9 +18,8 @@ public class JqueryMenuPageObject extends SuperPageObject{
 	private WebElement downloadsMenuButton;
 	private WebElement excelMenuButton;
 
-	String downloadedElementUrl;
-
 	Functions function = new Functions();
+	private FileReader file;
 
 	public WebElement getWebElement(WebElement element, String tagName, int index) {
 
@@ -50,7 +44,6 @@ public class JqueryMenuPageObject extends SuperPageObject{
 		excelMenuButton = getMenuButton(strings, 2);
 		excelMenuButton.click();
 
-
 		return this;
 
 	}
@@ -71,25 +64,34 @@ public class JqueryMenuPageObject extends SuperPageObject{
 	public boolean getDownloadedFile(String fileName) {
 		
 		try {
-			BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName));
-			System.out.println("File found!");
-			return true;
+			
+			file = new FileReader(fileName);
+			
+			if(file!=null) {
+				
+				System.out.println("File found!");
+				return true;
+				
+			}
+			
 		}
 		catch (FileNotFoundException e){
+			
 			System.out.println("file not found!");
+			
 			try {
+				
 				Thread.sleep(2000);
 				return getDownloadedFile(fileName);	
+				
 			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
+
 				e1.printStackTrace();
+				
 			}
-		}
-		catch(IOException e) {
 		}
 
 		return false;
+		
 	}
-
-
 }

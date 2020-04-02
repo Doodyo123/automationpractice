@@ -79,6 +79,7 @@ public class DatabaseQueryTest {
 			String id = rs.getString("inventory_id");
 			System.out.println("Database record is " + id);
 		}
+		con.close();
 	}
 
 	// Execute Queries
@@ -94,10 +95,19 @@ public class DatabaseQueryTest {
 				"VALUES (4, 4, 4, '2006-02-15 04:57:12');";
 
 		con.setAutoCommit(false);
-		PreparedStatement updatedStore = con.prepareStatement(insertQuery);
-		updatedStore.executeUpdate();
+		try {
+			PreparedStatement updatedStore = con.prepareStatement(insertQuery);
+			updatedStore.executeUpdate();
+			System.out.println("table updated");
+		} catch (SQLException e){
+			if(e.toString() == "Duplicate entry '4' for key 'store.PRIMARY'") {
+				System.out.println(e);
+				Statement deleteStatement = con.createStatement();
+				deleteStatement.executeQuery("DELETE FROM store WHERE store_id = 4;");
+				canRunQueryEight();
+			}
+		}
 		con.commit();
-
 		con.close();
 	}
 

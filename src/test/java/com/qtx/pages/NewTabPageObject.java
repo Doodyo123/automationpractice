@@ -26,6 +26,7 @@ public class NewTabPageObject extends SuperPageObject{
 	public NewTabPageObject setDriver() {
 
 		driver.get("http://the-internet.herokuapp.com/windows/new");
+		
 		return this;
 		
 	}

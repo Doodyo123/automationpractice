@@ -24,28 +24,38 @@ public class HomePageObject extends SuperPageObject{
 	}
 	
 	public HomePageObject getButtonOne() {
+		
 		buttonOne = getWebElement(buttonGroup, "li", 0);
 		buttonOne.click();
+		
 		return this;
 	}
 	
 	public HomePageObject getButtonTwo() {
+		
 		buttonTwo = getWebElement(buttonGroup, "li", 1);
 		buttonTwo.click();
+		
 		return this;
 	}
 
 	public HomePageObject(WebDriver webDriverInstance, String domainNameInstance) {
+		
 		super(webDriverInstance, domainNameInstance);
+		
 	}
 
 	public HomePageObject openHomePage() {
+		
 		String url = "";
 		Navigate(url);
+		
 		return this;
+		
 	}
 	
 	public boolean isButtonSelected() {
+		
 		boolean checker = false;
 		String status = buttonTwo.getAttribute("class");
 		System.out.println(status);

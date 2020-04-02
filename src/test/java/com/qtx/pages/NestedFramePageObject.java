@@ -2,8 +2,6 @@ package com.qtx.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 public class NestedFramePageObject extends FramePageObject{	
 
@@ -15,6 +13,7 @@ public class NestedFramePageObject extends FramePageObject{
 	public NestedFramePageObject getFrame(String name) {
 		
 		driver.switchTo().frame(name);
+		
 		return this;
 		
 	}
@@ -22,6 +21,7 @@ public class NestedFramePageObject extends FramePageObject{
 	public NestedFramePageObject getParentFrame(String name) {
 		
 		getFrame(name);
+		
 		return this;
 		
 	}
@@ -29,13 +29,16 @@ public class NestedFramePageObject extends FramePageObject{
 	public NestedFramePageObject getDefault() {
 		
 		driver.switchTo().defaultContent();
+		
 		return this;
+		
 	}
 
 	public String getLeftFrameText() {
 		
 		getParentFrame("frame-top");
 		getFrame("frame-left");
+		
 		return driver.findElement(By.tagName("body")).getText();
 		
 	}
@@ -44,6 +47,7 @@ public class NestedFramePageObject extends FramePageObject{
 		
 		getParentFrame("frame-top");
 		getFrame("frame-middle");
+		
 		return driver.findElement(By.tagName("body")).getText();
 		
 	}
@@ -52,6 +56,7 @@ public class NestedFramePageObject extends FramePageObject{
 		
 		getParentFrame("frame-top");
 		getFrame("frame-right");
+		
 		return driver.findElement(By.tagName("body")).getText();
 		
 	}
@@ -59,6 +64,7 @@ public class NestedFramePageObject extends FramePageObject{
 	public String getBottomFrameText() {
 		
 		getFrame("frame-bottom");
+		
 		return driver.findElement(By.tagName("body")).getText();
 		
 	}

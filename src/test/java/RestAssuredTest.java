@@ -6,7 +6,6 @@ import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
 public class RestAssuredTest {

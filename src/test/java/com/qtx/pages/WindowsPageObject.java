@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class WindowsPageObject extends SuperPageObject{
 	
 	@FindBy(css="a[href='/windows/new']")
-	WebElement clickHereButton;
+	private WebElement clickHereButton;
 	
 	private String text;
 	private String mainWindow;
@@ -22,6 +22,7 @@ public class WindowsPageObject extends SuperPageObject{
 
 		String url = "/windows";
 		Navigate(url);
+		
 		return this;
 		
 	}
@@ -30,6 +31,7 @@ public class WindowsPageObject extends SuperPageObject{
 		
 		mainWindow = driver.getWindowHandle();
 		clickHereButton.click();
+		
 		return this;
 		
 	}
@@ -38,11 +40,10 @@ public class WindowsPageObject extends SuperPageObject{
 		
 		NewTabPageObject newTab = new NewTabPageObject
 				(driver, "http://the-internet.herokuapp.com/windows/new");
-		
 		newTab.setDriver();
-		
 		text = newTab.getText();
 		driver.switchTo().window(mainWindow);
+		
 		return this;		
 		
 	}

@@ -18,13 +18,8 @@ public class CheckBoxPageObject extends SuperPageObject{
 
 	@FindBy(css="form[id='checkboxes']")
 	private WebElement mappedElement;
-
-
 	private WebElement checkBoxOne;
-
 	private WebElement checkBoxTwo;
-
-
 
 	public CheckBoxPageObject openCheckBoxPage() {
 
@@ -37,7 +32,6 @@ public class CheckBoxPageObject extends SuperPageObject{
 	public WebElement getWebElement(WebElement element, String tagName, int index) {
 		
 		return function.getGroupOfElementsByTagName(element, tagName).get(index);
-		
 		
 	}
 

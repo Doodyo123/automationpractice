@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="4" total="5" passed="1">
+<testng-results skipped="0" failed="0" ignored="15" total="16" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3253" started-at="2020-04-01T00:44:39 PDT" finished-at="2020-04-01T00:44:42 PDT">
+  <suite name="Default suite" duration-ms="10808" started-at="2020-04-02T15:26:11 PDT" finished-at="2020-04-02T15:26:21 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3253" started-at="2020-04-01T00:44:39 PDT" finished-at="2020-04-01T00:44:42 PDT">
-      <class name="RestAssuredTest">
-        <test-method status="PASS" signature="ensureTimeStampUpdate()[pri:0, instance:RestAssuredTest@2a17b7b6]" name="ensureTimeStampUpdate" duration-ms="3191" started-at="2020-04-01T00:44:39 PDT" finished-at="2020-04-01T00:44:42 PDT">
+    <test name="Default test" duration-ms="10808" started-at="2020-04-02T15:26:11 PDT" finished-at="2020-04-02T15:26:21 PDT">
+      <class name="TheInternet">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@48503868]" name="beforeTest" is-config="true" duration-ms="5942" started-at="2020-04-02T15:26:11 PDT" finished-at="2020-04-02T15:26:17 PDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ensureTimeStampUpdate -->
-      </class> <!-- RestAssuredTest -->
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="canClickLastMenuItem()[pri:0, instance:TheInternet@48503868]" name="canClickLastMenuItem" duration-ms="4098" started-at="2020-04-02T15:26:17 PDT" finished-at="2020-04-02T15:26:21 PDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- canClickLastMenuItem -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@48503868]" name="afterTest" is-config="true" duration-ms="732" started-at="2020-04-02T15:26:21 PDT" finished-at="2020-04-02T15:26:21 PDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- TheInternet -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

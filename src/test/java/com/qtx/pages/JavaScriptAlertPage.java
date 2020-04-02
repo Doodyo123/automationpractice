@@ -29,6 +29,7 @@ public class JavaScriptAlertPage extends SuperPageObject{
 	public JavaScriptAlertPage clickJSAlertButton() {
 		
 		jSAlertButton.click();
+		
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 2);
 			wait.until(ExpectedConditions.alertIsPresent());
@@ -39,6 +40,7 @@ public class JavaScriptAlertPage extends SuperPageObject{
 		} catch (Exception e) {
 			
 		}
+		
 		return this;
 		
 	}
@@ -46,6 +48,7 @@ public class JavaScriptAlertPage extends SuperPageObject{
 	public JavaScriptAlertPage clickJSConfirmButton() {
 		
 		jSConfirmButton.click();
+		
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 2);
 			wait.until(ExpectedConditions.alertIsPresent());
@@ -56,11 +59,15 @@ public class JavaScriptAlertPage extends SuperPageObject{
 		} catch (Exception e) {
 			
 		}
+		
 		return this;
+		
 	}
 	
 	public JavaScriptAlertPage clickJSPromptButton(String text) {
+		
 		jSPromptButton.click();
+		
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 2);
 			wait.until(ExpectedConditions.alertIsPresent());
@@ -72,18 +79,25 @@ public class JavaScriptAlertPage extends SuperPageObject{
 		} catch (Exception e) {
 			
 		}
+		
 		return this;
+		
 	}
 	
 
 	public JavaScriptAlertPage openJavaScriptAlertsPage() {
+		
 		String url = "/javascript_alerts";
 		Navigate(url);
+		
 		return this;
+		
 	}
 	
 	public String getResultText() {
+		
 		return resultText.getText();
+		
 	}
 
 }

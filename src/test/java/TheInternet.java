@@ -1,12 +1,3 @@
-
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -93,12 +84,10 @@ public class TheInternet extends TestSuperClass{
 
 		HorizontalSliderPageObject page = new HorizontalSliderPageObject(driver, baseUrl);
 
-
 		float sliderValue = page
 				.openHorizontalSliderPage()
 				.setHorizontalSliderToMax()
 				.getSliderValue();
-
 
 		float expectedSliderValue = page.getSliderMaxValue();
 
@@ -118,11 +107,14 @@ public class TheInternet extends TestSuperClass{
 				.getInputValue();
 
 		Assert.assertEquals(actualNumberInput, number);
+		
 	}
 
 	@DataProvider(name = "numberData")
 	public Object[] getNumberData() {
+		
 		return new Object[] { 2, 3, 5, 8, 13 };
+		
 	}
 
 	// As a user
@@ -130,6 +122,7 @@ public class TheInternet extends TestSuperClass{
 	// So that I can view the best selling products
 	@Test
 	public void canViewBestSellers() {
+		
 		boolean expectedButtonSelected = true;
 
 		boolean buttonSelected = new HomePageObject(driver, otherUrl )
@@ -140,6 +133,7 @@ public class TheInternet extends TestSuperClass{
 
 		System.out.println(buttonSelected);
 		Assert.assertEquals(buttonSelected, expectedButtonSelected);
+		
 	}
 
 	// As a user
@@ -157,6 +151,7 @@ public class TheInternet extends TestSuperClass{
 				.getDownloadedFile(fileName);
 
 		Assert.assertEquals(downloadedFile, true);
+		
 	}
 
 	// As a user
@@ -165,6 +160,7 @@ public class TheInternet extends TestSuperClass{
 	// HomeWork 2.a
 	@Test
 	public void canClickJSAlertButton() {
+		
 		String expectedText = "You successfuly clicked an alert";
 
 		String actualText = new JavaScriptAlertPage(driver, baseUrl)
@@ -173,6 +169,7 @@ public class TheInternet extends TestSuperClass{
 				.getResultText();
 
 		Assert.assertEquals(actualText, expectedText);
+		
 	}
 
 	// As a user
@@ -181,6 +178,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 2.b
 	@Test
 	public void canClickJSConfirmButton() {
+		
 		String expectedText = "You clicked: Ok";
 
 		String actualText = new JavaScriptAlertPage(driver, baseUrl)
@@ -189,6 +187,7 @@ public class TheInternet extends TestSuperClass{
 				.getResultText();
 
 		Assert.assertEquals(actualText, expectedText);
+		
 	}
 
 	// As a user
@@ -197,6 +196,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 2.c
 	@Test
 	public void canClickJSPromptButton() {
+		
 		String text = "Hello";
 		String expectedText = "You entered: " + text;
 
@@ -206,6 +206,7 @@ public class TheInternet extends TestSuperClass{
 				.getResultText();
 
 		Assert.assertEquals(actualText, expectedText);
+		
 	}
 
 	// As a user
@@ -230,6 +231,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 4
 	@Test
 	public void canSelectProfileThree() {
+		
 		String expectedUrl = "http://the-internet.herokuapp.com/users/3";
 
 		String actualUrl =	new HoverPageObject(driver, baseUrl)
@@ -238,6 +240,7 @@ public class TheInternet extends TestSuperClass{
 				.selectProfileThree();
 
 		Assert.assertEquals(actualUrl, expectedUrl);
+		
 	}
 
 	// As a user 
@@ -246,6 +249,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 5
 	@Test
 	public void canDownloadTextFile() {
+		
 		String expectedText = "check";
 
 		String actualText = new DownloadPageObject(driver, baseUrl)
@@ -263,6 +267,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 6 - contains grouped elements
 	@Test 
 	public void canPrintText() {
+		
 		boolean expected = true;
 
 		boolean didPrint = new InfiniteScrollPageObject(driver, baseUrl)
@@ -290,6 +295,7 @@ public class TheInternet extends TestSuperClass{
 				.getText();
 
 		Assert.assertEquals(actualText, expectedText);
+		
 	}
 
 	// As a user
@@ -305,7 +311,7 @@ public class TheInternet extends TestSuperClass{
 				.getAmountDue();
 
 		Assert.assertEquals(actual, expected);
+		
 	}
 
-	
 }

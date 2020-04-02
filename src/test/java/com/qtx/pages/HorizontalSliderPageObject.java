@@ -12,7 +12,6 @@ public class HorizontalSliderPageObject extends SuperPageObject {
 	
 	@FindBy(css="input[type='range']")
 	private WebElement horizontalSlider;
-	
 	@FindBy(css="div[class='sliderContainer']")
 	private WebElement sliderContainer;
 	
@@ -28,6 +27,7 @@ public class HorizontalSliderPageObject extends SuperPageObject {
 
 		String url = "/horizontal_slider";
 		Navigate(url);
+		
 		return this;
 		
 	}
@@ -41,6 +41,7 @@ public class HorizontalSliderPageObject extends SuperPageObject {
 		Actions builder = new Actions(driver);
 		
 		builder.clickAndHold(horizontalSlider).moveByOffset(width, 0).release().build().perform();
+		
 		return this;
 		
 	}
@@ -52,7 +53,6 @@ public class HorizontalSliderPageObject extends SuperPageObject {
 	}
 	
 	public float getSliderMaxValue	() {
-		
 		
 		return Float.valueOf(horizontalSlider.getAttribute("max").trim()).floatValue();
 		

@@ -23,6 +23,7 @@ public class LoginPageObject extends SuperPageObject{
 		
 		String url = "/login";
 		Navigate(url);
+		
 		return this;
 		
 	}
@@ -32,6 +33,7 @@ public class LoginPageObject extends SuperPageObject{
 		userNameTextBox.sendKeys(userName);
 		passwordTextBox.sendKeys(password);
 		submitBox.click();
+		
 		return new SecurePageObject(driver, bassUrl);
 		
 	}
