@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="21" total="22" passed="1">
+<testng-results skipped="0" failed="0" ignored="22" total="23" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11070" started-at="2020-04-11T17:37:02 PDT" finished-at="2020-04-11T17:37:13 PDT">
+  <suite name="Default suite" duration-ms="9220" started-at="2020-04-12T12:22:25 PDT" finished-at="2020-04-12T12:22:34 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11070" started-at="2020-04-11T17:37:02 PDT" finished-at="2020-04-11T17:37:13 PDT">
+    <test name="Default test" duration-ms="9220" started-at="2020-04-12T12:22:25 PDT" finished-at="2020-04-12T12:22:34 PDT">
       <class name="TheInternet">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@48503868]" name="beforeTest" is-config="true" duration-ms="6344" started-at="2020-04-11T17:37:02 PDT" finished-at="2020-04-11T17:37:08 PDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@48503868]" name="beforeTest" is-config="true" duration-ms="6671" started-at="2020-04-12T12:22:25 PDT" finished-at="2020-04-12T12:22:32 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canGetSuccessfulNotification()[pri:0, instance:TheInternet@48503868]" name="canGetSuccessfulNotification" duration-ms="3708" started-at="2020-04-11T17:37:08 PDT" finished-at="2020-04-11T17:37:12 PDT">
+        <test-method status="PASS" signature="canFindTypo()[pri:0, instance:TheInternet@48503868]" name="canFindTypo" duration-ms="1513" started-at="2020-04-12T12:22:32 PDT" finished-at="2020-04-12T12:22:33 PDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canGetSuccessfulNotification -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@48503868]" name="afterTest" is-config="true" duration-ms="975" started-at="2020-04-11T17:37:12 PDT" finished-at="2020-04-11T17:37:13 PDT">
+        </test-method> <!-- canFindTypo -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@48503868]" name="afterTest" is-config="true" duration-ms="998" started-at="2020-04-12T12:22:33 PDT" finished-at="2020-04-12T12:22:34 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

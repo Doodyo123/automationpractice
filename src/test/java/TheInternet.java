@@ -16,10 +16,11 @@ import com.qtx.pages.TablesPageObject;
 import com.qtx.pages.WindowsPageObject;
 import com.qtx.pages.contextMenuPage;
 import com.qtx.pages.disappearingElementPage;
-import com.qtx.pages.dragAndDropPage;
+import com.qtx.pages.dragAndDropPageObject;
 import com.qtx.pages.exitIntentPage;
 import com.qtx.pages.floatingMenuPage;
 import com.qtx.pages.notificationMessagePage;
+import com.qtx.pages.typoPageObject;
 import com.qtx.pages.DownloadPageObject;
 import com.qtx.pages.HoverPageObject;
 import com.qtx.pages.InfiniteScrollPageObject;
@@ -366,8 +367,9 @@ public class TheInternet extends TestSuperClass{
 
 		String expected ="B";
 
-		String actual = new dragAndDropPage(driver, baseUrl)
+		String actual = new dragAndDropPageObject(driver, baseUrl)
 				.openDragAndDropPage()
+				.getLocationOfBoxB()
 				.swapBoxAWithBoxB()
 				.getFirstColumnAText();
 
@@ -438,6 +440,21 @@ public class TheInternet extends TestSuperClass{
 		String actual = page.getNotificationMessage();
 
 		Assert.assertEquals(actual, expected);
+	}
+	
+	// As a user 
+	// When I refresh the page I see a type in the text
+	// hw 7/7
+	@Test
+	public void canFindTypo() {
+		String typo = "Sometimes you'll see a typo, other times you won,t.";
+		
+		String actual = new typoPageObject(driver, baseUrl)
+		.openTypePage()
+		.getText()
+		.findTypo();
+		
+		Assert.assertEquals(actual, typo);
 	}
 
 }
