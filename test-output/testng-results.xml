@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="15" total="16" passed="1">
+<testng-results skipped="0" failed="0" ignored="21" total="22" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10808" started-at="2020-04-02T15:26:11 PDT" finished-at="2020-04-02T15:26:21 PDT">
+  <suite name="Default suite" duration-ms="11070" started-at="2020-04-11T17:37:02 PDT" finished-at="2020-04-11T17:37:13 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10808" started-at="2020-04-02T15:26:11 PDT" finished-at="2020-04-02T15:26:21 PDT">
+    <test name="Default test" duration-ms="11070" started-at="2020-04-11T17:37:02 PDT" finished-at="2020-04-11T17:37:13 PDT">
       <class name="TheInternet">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@48503868]" name="beforeTest" is-config="true" duration-ms="5942" started-at="2020-04-02T15:26:11 PDT" finished-at="2020-04-02T15:26:17 PDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@48503868]" name="beforeTest" is-config="true" duration-ms="6344" started-at="2020-04-11T17:37:02 PDT" finished-at="2020-04-11T17:37:08 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canClickLastMenuItem()[pri:0, instance:TheInternet@48503868]" name="canClickLastMenuItem" duration-ms="4098" started-at="2020-04-02T15:26:17 PDT" finished-at="2020-04-02T15:26:21 PDT">
+        <test-method status="PASS" signature="canGetSuccessfulNotification()[pri:0, instance:TheInternet@48503868]" name="canGetSuccessfulNotification" duration-ms="3708" started-at="2020-04-11T17:37:08 PDT" finished-at="2020-04-11T17:37:12 PDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canClickLastMenuItem -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@48503868]" name="afterTest" is-config="true" duration-ms="732" started-at="2020-04-02T15:26:21 PDT" finished-at="2020-04-02T15:26:21 PDT">
+        </test-method> <!-- canGetSuccessfulNotification -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@48503868]" name="afterTest" is-config="true" duration-ms="975" started-at="2020-04-11T17:37:12 PDT" finished-at="2020-04-11T17:37:13 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -11,6 +14,12 @@ import com.qtx.pages.JavaScriptAlertPage;
 import com.qtx.pages.LoginPageObject;
 import com.qtx.pages.TablesPageObject;
 import com.qtx.pages.WindowsPageObject;
+import com.qtx.pages.contextMenuPage;
+import com.qtx.pages.disappearingElementPage;
+import com.qtx.pages.dragAndDropPage;
+import com.qtx.pages.exitIntentPage;
+import com.qtx.pages.floatingMenuPage;
+import com.qtx.pages.notificationMessagePage;
 import com.qtx.pages.DownloadPageObject;
 import com.qtx.pages.HoverPageObject;
 import com.qtx.pages.InfiniteScrollPageObject;
@@ -107,14 +116,14 @@ public class TheInternet extends TestSuperClass{
 				.getInputValue();
 
 		Assert.assertEquals(actualNumberInput, number);
-		
+
 	}
 
 	@DataProvider(name = "numberData")
 	public Object[] getNumberData() {
-		
+
 		return new Object[] { 2, 3, 5, 8, 13 };
-		
+
 	}
 
 	// As a user
@@ -122,7 +131,7 @@ public class TheInternet extends TestSuperClass{
 	// So that I can view the best selling products
 	@Test
 	public void canViewBestSellers() {
-		
+
 		boolean expectedButtonSelected = true;
 
 		boolean buttonSelected = new HomePageObject(driver, otherUrl )
@@ -133,7 +142,7 @@ public class TheInternet extends TestSuperClass{
 
 		System.out.println(buttonSelected);
 		Assert.assertEquals(buttonSelected, expectedButtonSelected);
-		
+
 	}
 
 	// As a user
@@ -151,7 +160,7 @@ public class TheInternet extends TestSuperClass{
 				.getDownloadedFile(fileName);
 
 		Assert.assertEquals(downloadedFile, true);
-		
+
 	}
 
 	// As a user
@@ -160,7 +169,7 @@ public class TheInternet extends TestSuperClass{
 	// HomeWork 2.a
 	@Test
 	public void canClickJSAlertButton() {
-		
+
 		String expectedText = "You successfuly clicked an alert";
 
 		String actualText = new JavaScriptAlertPage(driver, baseUrl)
@@ -169,7 +178,7 @@ public class TheInternet extends TestSuperClass{
 				.getResultText();
 
 		Assert.assertEquals(actualText, expectedText);
-		
+
 	}
 
 	// As a user
@@ -178,7 +187,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 2.b
 	@Test
 	public void canClickJSConfirmButton() {
-		
+
 		String expectedText = "You clicked: Ok";
 
 		String actualText = new JavaScriptAlertPage(driver, baseUrl)
@@ -187,7 +196,7 @@ public class TheInternet extends TestSuperClass{
 				.getResultText();
 
 		Assert.assertEquals(actualText, expectedText);
-		
+
 	}
 
 	// As a user
@@ -196,7 +205,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 2.c
 	@Test
 	public void canClickJSPromptButton() {
-		
+
 		String text = "Hello";
 		String expectedText = "You entered: " + text;
 
@@ -206,7 +215,7 @@ public class TheInternet extends TestSuperClass{
 				.getResultText();
 
 		Assert.assertEquals(actualText, expectedText);
-		
+
 	}
 
 	// As a user
@@ -231,7 +240,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 4
 	@Test
 	public void canSelectProfileThree() {
-		
+
 		String expectedUrl = "http://the-internet.herokuapp.com/users/3";
 
 		String actualUrl =	new HoverPageObject(driver, baseUrl)
@@ -240,7 +249,7 @@ public class TheInternet extends TestSuperClass{
 				.selectProfileThree();
 
 		Assert.assertEquals(actualUrl, expectedUrl);
-		
+
 	}
 
 	// As a user 
@@ -249,7 +258,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 5
 	@Test
 	public void canDownloadTextFile() {
-		
+
 		String expectedText = "check";
 
 		String actualText = new DownloadPageObject(driver, baseUrl)
@@ -267,7 +276,7 @@ public class TheInternet extends TestSuperClass{
 	// Homework 6 - contains grouped elements
 	@Test 
 	public void canPrintText() {
-		
+
 		boolean expected = true;
 
 		boolean didPrint = new InfiniteScrollPageObject(driver, baseUrl)
@@ -295,7 +304,7 @@ public class TheInternet extends TestSuperClass{
 				.getText();
 
 		Assert.assertEquals(actualText, expectedText);
-		
+
 	}
 
 	// As a user
@@ -311,7 +320,124 @@ public class TheInternet extends TestSuperClass{
 				.getAmountDue();
 
 		Assert.assertEquals(actual, expected);
+
+	}
+
+	// As a user
+	// I want to right click in the context menu
+	// So that I can handle the java script alert
+	// hw 1/7
+	@Test
+	public void canRightClickCotextMenu() {
+
+		String expectedText = "You selected a context menu";
+
+		String actualText = new contextMenuPage(driver, baseUrl)
+				.openContextMenuPage()
+				.rightClickBox()
+				.switchToJSAlert()
+				.getAlertText();
+
+		Assert.assertEquals(actualText, expectedText);
+
+	}
+
+	// The disappearing element
+	// refresh the page until the element appears
+	// hw 2/7
+	@Test
+	public void canClickGalleryButton() {
+		boolean expected = true;
+
+		boolean actual = new disappearingElementPage(driver, baseUrl)
+				.opendisappearingElementPage()
+				.refreshPageUntilButtonIsClickable();
+
+		Assert.assertEquals(actual, expected);
+
+	}
+
+	// As a user
+	// I want to be able to swap box A and box B
+	// So that I can know how to drag and drop
+	// hw 3/7
+	@Test
+	public void canDragAndDrop() {
+
+		String expected ="B";
+
+		String actual = new dragAndDropPage(driver, baseUrl)
+				.openDragAndDropPage()
+				.swapBoxAWithBoxB()
+				.getFirstColumnAText();
+
+		Assert.assertEquals(actual, expected);
+	}
+
+	// As a user
+	// I want to click each menu button
+	// So that I know how to handle floating menu
+	// hw 4/7
+	@Test(dataProvider="buttonNameData")
+	public void canHandleFloatingMenu(String name) {
+		List<String> expected = new ArrayList<String>();
+		expected.add(name);
+
+		List<String> actualList = new floatingMenuPage(driver, baseUrl)
+				.openFloatingMenuPage()
+				.clickButton(name)
+				.getUrl()
+				.getUrlList();
+
+		Assert.assertEquals(actualList.get(0), expected.get(0));
+	}
+
+	@DataProvider(name = "buttonNameData")
+	public Object[] getButtonList() {
+
+		return new Object[] {"#home", "#news", "#contact", "#about"};
+
+	}
+
+	// As a user
+	// I want to move the mouse out of pane
+	// so that the modal window will show
+	// hw 5/7
+	@Test
+	public void canMouseOutOfPane() {
+		String expected = "THIS IS A MODAL WINDOW";
+
+		String actual = new exitIntentPage(driver, baseUrl)
+				.openExitIntentPage()
+				.moveMouseOutOfPane()
+				.getModelWindowText();
+
+		Assert.assertEquals(actual, expected);
+	}
+
+	// As a user
+	// I want to be able to click the button until i get the success notification
+	// So that I can know how to wait for successful notification
+	// hw 6/7
+	@Test
+	public void canGetSuccessfulNotification() {
+
+		String expected = "Action successful";
+		boolean isMessageSuccess = false;
+
+		notificationMessagePage page = new notificationMessagePage(driver, baseUrl);
+				
+		page.openNotificationMessagePage();
 		
+		while(isMessageSuccess==false) {
+			isMessageSuccess = page
+					.getClickHereButton()
+					.clickClickHereButton()
+					.checkMessage();
+		}
+		String actual = page.getNotificationMessage();
+
+		Assert.assertEquals(actual, expected);
 	}
 
 }
