@@ -36,7 +36,7 @@ public class TheInternet extends TestSuperClass{
 	@Test
 	public void canClickCheckBoxes() {
 
-		CheckBoxPageObject page = new CheckBoxPageObject(driver, baseUrl)
+		CheckBoxPageObject page = new CheckBoxPageObject(driver, theInternetUrl)
 				.openCheckBoxPage()
 				.selectCheckBoxOne()
 				.selectCheckBoxTwo();
@@ -59,7 +59,7 @@ public class TheInternet extends TestSuperClass{
 		String password = new String("SuperSecretPassword!");
 		String expectedGreenBoxText = new String("You logged into a secure area!\n×");
 
-		String actualGreenBoxText = new LoginPageObject(driver, baseUrl)
+		String actualGreenBoxText = new LoginPageObject(driver, theInternetUrl)
 				.OpenLoginPage() //from LoginPageObject
 				.login(userName, password) //from LoginPageObject
 				.getLoginConfirmationMessage(); // from SecurePageObject
@@ -77,7 +77,7 @@ public class TheInternet extends TestSuperClass{
 		String expectedSelection = "Option 2";
 
 		//act
-		String actualSelection = new DropDownPageObject(driver, baseUrl)
+		String actualSelection = new DropDownPageObject(driver, theInternetUrl)
 				.openDropdownPage()
 				.setDropDownList(expectedSelection)
 				.getDropDownListTextValue();
@@ -92,7 +92,7 @@ public class TheInternet extends TestSuperClass{
 	@Test
 	public void canMoveSliderToMaxValue() {
 
-		HorizontalSliderPageObject page = new HorizontalSliderPageObject(driver, baseUrl);
+		HorizontalSliderPageObject page = new HorizontalSliderPageObject(driver, theInternetUrl);
 
 		float sliderValue = page
 				.openHorizontalSliderPage()
@@ -111,7 +111,7 @@ public class TheInternet extends TestSuperClass{
 	@Test(dataProvider="numberData")
 	public void canInputNumbers(int number) {
 
-		int actualNumberInput = new InputPage(driver, baseUrl)
+		int actualNumberInput = new InputPage(driver, theInternetUrl)
 				.navigate()
 				.setInputValue(number)
 				.getInputValue();
@@ -135,7 +135,7 @@ public class TheInternet extends TestSuperClass{
 
 		boolean expectedButtonSelected = true;
 
-		boolean buttonSelected = new HomePageObject(driver, otherUrl )
+		boolean buttonSelected = new HomePageObject(driver, automationPracticeUrl )
 				.openHomePage()
 				.getButtonOne()
 				.getButtonTwo()
@@ -155,7 +155,7 @@ public class TheInternet extends TestSuperClass{
 
 		String fileName = "C:\\Users\\Deric\\Downloads\\menu.xls";
 
-		boolean downloadedFile = new JqueryMenuPageObject(driver, baseUrl)
+		boolean downloadedFile = new JqueryMenuPageObject(driver, theInternetUrl)
 				.openMenuPage()
 				.clickItemByMenuPath(new String[] {"Enabled", "Downloads", "Excel"})
 				.getDownloadedFile(fileName);
@@ -173,7 +173,7 @@ public class TheInternet extends TestSuperClass{
 
 		String expectedText = "You successfuly clicked an alert";
 
-		String actualText = new JavaScriptAlertPage(driver, baseUrl)
+		String actualText = new JavaScriptAlertPage(driver, theInternetUrl)
 				.openJavaScriptAlertsPage()
 				.clickJSAlertButton()
 				.getResultText();
@@ -191,7 +191,7 @@ public class TheInternet extends TestSuperClass{
 
 		String expectedText = "You clicked: Ok";
 
-		String actualText = new JavaScriptAlertPage(driver, baseUrl)
+		String actualText = new JavaScriptAlertPage(driver, theInternetUrl)
 				.openJavaScriptAlertsPage()
 				.clickJSConfirmButton()
 				.getResultText();
@@ -210,7 +210,7 @@ public class TheInternet extends TestSuperClass{
 		String text = "Hello";
 		String expectedText = "You entered: " + text;
 
-		String actualText = new JavaScriptAlertPage(driver, baseUrl)
+		String actualText = new JavaScriptAlertPage(driver, theInternetUrl)
 				.openJavaScriptAlertsPage()
 				.clickJSPromptButton(text)
 				.getResultText();
@@ -228,7 +228,7 @@ public class TheInternet extends TestSuperClass{
 		String frames[] = new String[4];
 		String expected[] = {"LEFT", "MIDDLE", "RIGHT", "BOTTOM"};
 
-		frames = new FramePageObject(driver, baseUrl)
+		frames = new FramePageObject(driver, theInternetUrl)
 				.openFramePage()
 				.getFrameText();
 
@@ -244,7 +244,7 @@ public class TheInternet extends TestSuperClass{
 
 		String expectedUrl = "http://the-internet.herokuapp.com/users/3";
 
-		String actualUrl =	new HoverPageObject(driver, baseUrl)
+		String actualUrl =	new HoverPageObject(driver, theInternetUrl)
 				.openHoverPage()
 				.hoverToFigureThree()
 				.selectProfileThree();
@@ -262,7 +262,7 @@ public class TheInternet extends TestSuperClass{
 
 		String expectedText = "check";
 
-		String actualText = new DownloadPageObject(driver, baseUrl)
+		String actualText = new DownloadPageObject(driver, theInternetUrl)
 				.openDownloadPage()
 				.selectTextFile()
 				.getTextFileText();
@@ -280,7 +280,7 @@ public class TheInternet extends TestSuperClass{
 
 		boolean expected = true;
 
-		boolean didPrint = new InfiniteScrollPageObject(driver, baseUrl)
+		boolean didPrint = new InfiniteScrollPageObject(driver, theInternetUrl)
 				.openInfiniteScrollPage()
 				.scrollDown()
 				.getFirstDynamicParagraph()
@@ -298,7 +298,7 @@ public class TheInternet extends TestSuperClass{
 	public void canSwitchWindows() {
 
 		String expectedText = "New Window";
-		String actualText = new WindowsPageObject(driver, baseUrl)
+		String actualText = new WindowsPageObject(driver, theInternetUrl)
 				.openWindowsPageObject()
 				.clickButtonToOpenNewTab()
 				.grabTextFromNewTab()
@@ -316,7 +316,7 @@ public class TheInternet extends TestSuperClass{
 	public void canGetAmountDue() {
 
 		String expected = "$100.00";
-		String actual = new TablesPageObject(driver, baseUrl)
+		String actual = new TablesPageObject(driver, theInternetUrl)
 				.openTablesPage()
 				.getAmountDue();
 
@@ -333,7 +333,7 @@ public class TheInternet extends TestSuperClass{
 
 		String expectedText = "You selected a context menu";
 
-		String actualText = new contextMenuPage(driver, baseUrl)
+		String actualText = new contextMenuPage(driver, theInternetUrl)
 				.openContextMenuPage()
 				.rightClickBox()
 				.switchToJSAlert()
@@ -350,7 +350,7 @@ public class TheInternet extends TestSuperClass{
 	public void canClickGalleryButton() {
 		boolean expected = true;
 
-		boolean actual = new disappearingElementPage(driver, baseUrl)
+		boolean actual = new disappearingElementPage(driver, theInternetUrl)
 				.opendisappearingElementPage()
 				.refreshPageUntilButtonIsClickable();
 
@@ -367,7 +367,7 @@ public class TheInternet extends TestSuperClass{
 
 		String expected ="B";
 
-		String actual = new dragAndDropPageObject(driver, baseUrl)
+		String actual = new dragAndDropPageObject(driver, theInternetUrl)
 				.openDragAndDropPage()
 				.getLocationOfBoxB()
 				.swapBoxAWithBoxB()
@@ -385,7 +385,7 @@ public class TheInternet extends TestSuperClass{
 		List<String> expected = new ArrayList<String>();
 		expected.add(name);
 
-		List<String> actualList = new floatingMenuPage(driver, baseUrl)
+		List<String> actualList = new floatingMenuPage(driver, theInternetUrl)
 				.openFloatingMenuPage()
 				.clickButton(name)
 				.getUrl()
@@ -409,7 +409,7 @@ public class TheInternet extends TestSuperClass{
 	public void canMouseOutOfPane() {
 		String expected = "THIS IS A MODAL WINDOW";
 
-		String actual = new exitIntentPage(driver, baseUrl)
+		String actual = new exitIntentPage(driver, theInternetUrl)
 				.openExitIntentPage()
 				.moveMouseOutOfPane()
 				.getModelWindowText();
@@ -427,7 +427,7 @@ public class TheInternet extends TestSuperClass{
 		String expected = "Action successful";
 		boolean isMessageSuccess = false;
 
-		notificationMessagePage page = new notificationMessagePage(driver, baseUrl);
+		notificationMessagePage page = new notificationMessagePage(driver, theInternetUrl);
 				
 		page.openNotificationMessagePage();
 		
@@ -449,7 +449,7 @@ public class TheInternet extends TestSuperClass{
 	public void canFindTypo() {
 		String typo = "Sometimes you'll see a typo, other times you won,t.";
 		
-		String actual = new typoPageObject(driver, baseUrl)
+		String actual = new typoPageObject(driver, theInternetUrl)
 		.openTypePage()
 		.getText()
 		.findTypo();

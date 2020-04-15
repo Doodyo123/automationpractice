@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="22" total="23" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="9220" started-at="2020-04-12T12:22:25 PDT" finished-at="2020-04-12T12:22:34 PDT">
+  <suite name="Default suite" duration-ms="10993" started-at="2020-04-15T16:20:28 PDT" finished-at="2020-04-15T16:20:39 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="9220" started-at="2020-04-12T12:22:25 PDT" finished-at="2020-04-12T12:22:34 PDT">
-      <class name="TheInternet">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TheInternet@48503868]" name="beforeTest" is-config="true" duration-ms="6671" started-at="2020-04-12T12:22:25 PDT" finished-at="2020-04-12T12:22:32 PDT">
+    <test name="Default test" duration-ms="10993" started-at="2020-04-15T16:20:28 PDT" finished-at="2020-04-15T16:20:39 PDT">
+      <class name="DemoqaFormsTests">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:DemoqaFormsTests@64729b1e]" name="beforeTest" is-config="true" duration-ms="5916" started-at="2020-04-15T16:20:28 PDT" finished-at="2020-04-15T16:20:33 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canFindTypo()[pri:0, instance:TheInternet@48503868]" name="canFindTypo" duration-ms="1513" started-at="2020-04-12T12:22:32 PDT" finished-at="2020-04-12T12:22:33 PDT">
+        <test-method status="PASS" signature="canInputFirstAndLastName(data.userData)[pri:0, instance:DemoqaFormsTests@64729b1e]" name="canInputFirstAndLastName" duration-ms="4199" started-at="2020-04-15T16:20:33 PDT" data-provider="userData" finished-at="2020-04-15T16:20:38 PDT">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[data.userData@4007f65e]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canFindTypo -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:TheInternet@48503868]" name="afterTest" is-config="true" duration-ms="998" started-at="2020-04-12T12:22:33 PDT" finished-at="2020-04-12T12:22:34 PDT">
+        </test-method> <!-- canInputFirstAndLastName -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:DemoqaFormsTests@64729b1e]" name="afterTest" is-config="true" duration-ms="841" started-at="2020-04-15T16:20:38 PDT" finished-at="2020-04-15T16:20:39 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- TheInternet -->
+      </class> <!-- DemoqaFormsTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

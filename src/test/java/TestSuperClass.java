@@ -9,14 +9,16 @@ public abstract class TestSuperClass {
 
 	protected WebDriver driver;
 	
-	protected String baseUrl;
-	protected String otherUrl;
+	protected String theInternetUrl;
+	protected String automationPracticeUrl;
+	protected String demoqaFormsUrl;
 
 	@BeforeTest
 	public void beforeTest() {
 		driver = DriverManagerFactory.getManager(DriverType.CHROME).getDriver();
-		baseUrl = "http://the-internet.herokuapp.com";
-		otherUrl = "http://automationpractice.com/index.php";
+		theInternetUrl = "http://the-internet.herokuapp.com";
+		automationPracticeUrl = "http://automationpractice.com/index.php";
+		demoqaFormsUrl = "https://demoqa.com/automation-practice-form/";
 	}
 
 	@AfterTest
