@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10993" started-at="2020-04-15T16:20:28 PDT" finished-at="2020-04-15T16:20:39 PDT">
+  <suite name="Default suite" duration-ms="39225" started-at="2020-04-16T19:17:53 PDT" finished-at="2020-04-16T19:18:32 PDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10993" started-at="2020-04-15T16:20:28 PDT" finished-at="2020-04-15T16:20:39 PDT">
+    <test name="Default test" duration-ms="39225" started-at="2020-04-16T19:17:53 PDT" finished-at="2020-04-16T19:18:32 PDT">
       <class name="DemoqaFormsTests">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:DemoqaFormsTests@64729b1e]" name="beforeTest" is-config="true" duration-ms="5916" started-at="2020-04-15T16:20:28 PDT" finished-at="2020-04-15T16:20:33 PDT">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:DemoqaFormsTests@64729b1e]" name="beforeTest" is-config="true" duration-ms="6189" started-at="2020-04-16T19:17:53 PDT" finished-at="2020-04-16T19:17:59 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="canInputFirstAndLastName(data.userData)[pri:0, instance:DemoqaFormsTests@64729b1e]" name="canInputFirstAndLastName" duration-ms="4199" started-at="2020-04-15T16:20:33 PDT" data-provider="userData" finished-at="2020-04-15T16:20:38 PDT">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[data.userData@4007f65e]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="canFillAllInformation()[pri:0, instance:DemoqaFormsTests@64729b1e]" name="canFillAllInformation" duration-ms="32998" started-at="2020-04-16T19:17:59 PDT" finished-at="2020-04-16T19:18:32 PDT">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- canInputFirstAndLastName -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:DemoqaFormsTests@64729b1e]" name="afterTest" is-config="true" duration-ms="841" started-at="2020-04-15T16:20:38 PDT" finished-at="2020-04-15T16:20:39 PDT">
+        </test-method> <!-- canFillAllInformation -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:DemoqaFormsTests@64729b1e]" name="afterTest" is-config="true" duration-ms="1" started-at="2020-04-16T19:18:32 PDT" finished-at="2020-04-16T19:18:32 PDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
