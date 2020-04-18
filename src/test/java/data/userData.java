@@ -1,6 +1,8 @@
 package data;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class userData {
 	
@@ -13,6 +15,7 @@ public class userData {
 	private String automationTool;
 	private String continent;
 	private String seleniumCommands;
+	private List<String> continentList;
 	
 	
 	public String getFirstName() {
@@ -85,6 +88,14 @@ public class userData {
 
 	public void setSeleniumCommands(String seleniumCommands) {
 		this.seleniumCommands = seleniumCommands;
+	}
+
+	public List<String> getContinentList() {
+		return continentList;
+	}
+
+	public void setContinentList(ArrayList<String> continents) {
+		this.continentList = continents;
 	}
 
 }

@@ -56,7 +56,7 @@ public class DemoqaFormsTests extends TestSuperClass {
 		.selectProfession(John.getProfession())
 		.selectAutomationTool(John.getAutomationTool())
 		.selectContinent(John.getContinent())
-		.selectMultipleContinents(John.getContinent())
+		.selectMultipleContinents(John.getContinentList())
 		.selectSeleniumCommand(John.getSeleniumCommands())
 		.areFieldsCompleted();
 		

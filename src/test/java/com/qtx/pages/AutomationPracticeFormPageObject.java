@@ -167,23 +167,25 @@ public class AutomationPracticeFormPageObject extends SuperPageObject{
 
 	}
 
-	public AutomationPracticeFormPageObject selectMultipleContinents(String continent) {
+	public AutomationPracticeFormPageObject selectMultipleContinents(List<String> list) {
 
 		String continentName;
 		try {
 			continents = continentMultipleSelect.findElements(By.tagName("option"));
 			for(WebElement tempContinent : continents) {
 				continentName = tempContinent.getText();
-				if(continentName.equals(continent)) {
-					this.continentMultiple = tempContinent;
-					this.continentMultiple.click();
-					this.isSeleniumCommandSelected = true;
-					break;
+				for(String item : list) {
+					if(continentName.equals(item)) {
+						this.continentMultiple = tempContinent;
+						this.continentMultiple.click();
+						this.isSeleniumCommandSelected = true;
+					}
 				}
+				
 			}
 
 		} catch (Exception e) {
-			System.out.println("There is no match for " + continent);
+			System.out.println("There is no match for " + list);
 		}
 		return this;
 
