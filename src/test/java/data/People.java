@@ -15,7 +15,7 @@ public class People {
 		info.setDate(date);
 		info.setProfession("Manual Tester");
 		info.setAutomationTool("Selenium Webdriver");
-		info.setContinent("Asia");
+		info.setContinent("Africa");
 		info.setSeleniumCommands("Wait Commands");
 		
 		return info;

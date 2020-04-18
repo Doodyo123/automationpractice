@@ -1,9 +1,12 @@
 package com.qtx.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class AutomationPracticeFormPageObject extends SuperPageObject{
 
@@ -29,11 +32,25 @@ public class AutomationPracticeFormPageObject extends SuperPageObject{
 	private WebElement continentMultipleSelect;
 	@FindBy(css="Select[id='selenium_commands']")
 	private WebElement seleniumCommandsSelect;
+
+	private WebElement profession;
+	private WebElement automationTool;
+	private WebElement experience;
+	private WebElement continentMultiple;
+	private WebElement seleniumCommand;
+	private WebElement continent;
 	
+	private List<WebElement> continents;
+	private List<WebElement> seleniumCommands;
+
+	private boolean isContinentMultipleSelected;
+	private boolean isSeleniumCommandSelected;
+	private boolean isContinentSelected;
+
 	public AutomationPracticeFormPageObject(WebDriver driver, String demoqaFormsUrl) {
 
 		super(driver, demoqaFormsUrl);
-		
+
 	}
 
 	public AutomationPracticeFormPageObject openAutomationWebPage() {
@@ -41,27 +58,27 @@ public class AutomationPracticeFormPageObject extends SuperPageObject{
 		String url = "";
 		Navigate(url);
 		return this;
-		
+
 	}
 
 	public AutomationPracticeFormPageObject inputFirstName(String firstName) {
 
 		firstNameTextBox.sendKeys(firstName);
 		return this;
-		
+
 	}
 
 	public AutomationPracticeFormPageObject inputLastName(String lastName) {
 
 		lastNameTextBox.sendKeys(lastName);
 		return this;
-		
+
 	}
 
 	public boolean isFirstNameAndLastNameFilled() {
 
 		boolean isFilled = false;
-				
+
 		if (!firstNameTextBox.getAttribute("value").isEmpty()) {
 			if (!lastNameTextBox.getAttribute("value").isEmpty()) {
 				isFilled = true;
@@ -77,84 +94,144 @@ public class AutomationPracticeFormPageObject extends SuperPageObject{
 		} else if (gender.equals("Female")) {
 			genderFemale.click();
 		}
-		
+
 		return this;
-		
+
 	}
 
 	public AutomationPracticeFormPageObject selectYearsOfExperience(String yearsOfExperience) {
-		
+
 		try {
-			experienceSelection.findElement(By.cssSelector("input[value='"+ yearsOfExperience+"']")).click();
+			this.experience = experienceSelection.findElement(By.cssSelector("input[value='"+ yearsOfExperience+"']"));
+			this.experience.click();
 		} catch (Exception e) {
 			System.out.println("That option does not exist or " + e);
 		}
 		return this;
-		
+
 	}
 
 	public AutomationPracticeFormPageObject inputDate(String date) {
 
 		dateTextBox.sendKeys(date);
 		return this;
-		
+
 	}
 
 	public AutomationPracticeFormPageObject selectProfession(String profession) {
 
 		try {
-			professionCheckBoxGroup.findElement(By.cssSelector("input[value='"+profession+"']")).click();
+			this.profession = professionCheckBoxGroup.findElement(By.cssSelector("input[value='"+profession+"']"));
+			this.profession.click();
 		} catch(Exception e){
 			System.out.println("That option does not exist or " + e);			
 		}
-		
+
 		return this;
-		
+
 	}
 
 	public AutomationPracticeFormPageObject selectAutomationTool(String automationTool) {
 
 		try {
-			automationToolCheckBoxGroup.findElement(By.cssSelector("input[value='"+automationTool+"']")).click();
+			this.automationTool = automationToolCheckBoxGroup.findElement(By.cssSelector("input[value='"+automationTool+"']"));
+			this.automationTool.click();
 		} catch(Exception e) {
 			System.out.println("That option does not exist or " + e);
 		}
-		
+
 		return this;
-		
+
 	}
 
 	public AutomationPracticeFormPageObject selectContinent(String continent) {
 
+		String continentName;
 		try {
-			continentSelect.findElement(By.linkText(continent)).click();			
+			this.continentSelect.click();
+			this.continents = continentSelect.findElements(By.tagName("option"));
+			for(WebElement tempContinent : continents) {
+				continentName = tempContinent.getText();
+				if(continentName.equals(continent)) {
+					this.continent = tempContinent;
+					this.continent.click();
+					this.isContinentMultipleSelected = true;
+					break;
+				}
+			}
+
 		} catch (Exception e) {
 			System.out.println("There is no match for " + continent);
 		}
 		return this;
-		
+
 	}
 
 	public AutomationPracticeFormPageObject selectMultipleContinents(String continent) {
 
+		String continentName;
 		try {
-			continentMultipleSelect.findElement(By.linkText(continent)).click();
+			continents = continentMultipleSelect.findElements(By.tagName("option"));
+			for(WebElement tempContinent : continents) {
+				continentName = tempContinent.getText();
+				if(continentName.equals(continent)) {
+					this.continentMultiple = tempContinent;
+					this.continentMultiple.click();
+					this.isSeleniumCommandSelected = true;
+					break;
+				}
+			}
+
 		} catch (Exception e) {
 			System.out.println("There is no match for " + continent);
 		}
 		return this;
-		
+
 	}
 
 	public AutomationPracticeFormPageObject selectSeleniumCommand(String seleniumCommands) {
 
+		String seleniumCommandText;
 		try {
-			seleniumCommandsSelect.findElement(By.linkText(seleniumCommands)).click();
+			this.seleniumCommands = seleniumCommandsSelect.findElements(By.tagName("option"));
+			for(WebElement tempSeleniumCommand : this.seleniumCommands) {
+				seleniumCommandText = tempSeleniumCommand.getText();
+				if(seleniumCommandText.equals(seleniumCommands)) {
+					this.seleniumCommand = tempSeleniumCommand;
+					this.seleniumCommand.click();
+					this.isContinentSelected = true;
+					break;
+				}
+			}
 		} catch (Exception e) {
 			System.out.println("There is no match for " + seleniumCommands);
 		}
 		return this;
-		
+
+	}
+
+	public boolean areFieldsCompleted() {
+		boolean complete = false;
+		if(!firstNameTextBox.getAttribute("value").isEmpty()) {
+			if(!lastNameTextBox.getAttribute("value").isEmpty()) {
+				if( this.profession.isSelected()) {
+					if(this.automationTool.isSelected()) {
+						if(this.isContinentSelected) {
+							if(this.isContinentMultipleSelected) {
+								if(this.isSeleniumCommandSelected) {
+									if(this.experience.isSelected()) {
+										complete = true;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}else {
+			complete = false;
+		}
+		return complete;
 	}
 
 }

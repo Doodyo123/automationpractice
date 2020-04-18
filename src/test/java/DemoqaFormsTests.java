@@ -45,8 +45,8 @@ public class DemoqaFormsTests extends TestSuperClass {
 	public void canFillAllInformation() {
 		
 		userData John = People.getJohnInfo();
-		
-		new AutomationPracticeFormPageObject(driver, demoqaFormsUrl)
+		boolean expected = true;
+		boolean actual = new AutomationPracticeFormPageObject(driver, demoqaFormsUrl)
 		.openAutomationWebPage()
 		.inputFirstName(John.getFirstName())
 		.inputLastName(John.getLastName())
@@ -57,6 +57,9 @@ public class DemoqaFormsTests extends TestSuperClass {
 		.selectAutomationTool(John.getAutomationTool())
 		.selectContinent(John.getContinent())
 		.selectMultipleContinents(John.getContinent())
-		.selectSeleniumCommand(John.getSeleniumCommands());
+		.selectSeleniumCommand(John.getSeleniumCommands())
+		.areFieldsCompleted();
+		
+		Assert.assertEquals(actual, expected);
 	}
 }
