@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE settings>
+<settings>
+	<parameter name="base-url" value="http://the-internet.herokuapp.com" />
+	<parameter name="browser-type" value="chrome" />
+	<parameter name="database-connection-string" value="" />
+	<parameter name="implicit-wait-milliseconds" value="5000" />
+	<parameter name="page-load-timeout-milliseconds" value="10000" />
+</settings>

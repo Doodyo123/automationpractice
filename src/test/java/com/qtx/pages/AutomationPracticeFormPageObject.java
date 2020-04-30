@@ -38,7 +38,7 @@ public class AutomationPracticeFormPageObject extends SuperPageObject{
 	private WebElement continentMultiple;
 	private WebElement seleniumCommand;
 	private WebElement continent;
-	
+
 	private List<WebElement> continents;
 	private List<WebElement> seleniumCommands;
 
@@ -180,7 +180,7 @@ public class AutomationPracticeFormPageObject extends SuperPageObject{
 						this.isSeleniumCommandSelected = true;
 					}
 				}
-				
+
 			}
 
 		} catch (Exception e) {
@@ -234,5 +234,4 @@ public class AutomationPracticeFormPageObject extends SuperPageObject{
 		}
 		return complete;
 	}
-
 }
