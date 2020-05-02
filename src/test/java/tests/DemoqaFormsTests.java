@@ -9,7 +9,7 @@ import com.qtx.pages.AutomationPracticeFormPageObject;
 import data.People;
 import data.userData;
 
-public class DemoqaFormsTests extends TestBase {
+public class DemoqaFormsTests extends DemoqaTestBase {
 	
 	// As a user I want to input my first and last name
 	// so that I can know how to input my first and last name
@@ -17,7 +17,7 @@ public class DemoqaFormsTests extends TestBase {
 	public void canInputFirstAndLastName(userData John) {
 		boolean expected = true;
 		
-		boolean actual = new AutomationPracticeFormPageObject(driver, demoqaFormsUrl) 
+		boolean actual = new AutomationPracticeFormPageObject(driver, baseUrl) 
 		.openAutomationWebPage()
 		.inputFirstName(John.getFirstName())
 		.inputLastName(John.getLastName())
@@ -43,7 +43,7 @@ public class DemoqaFormsTests extends TestBase {
 		
 		userData John = People.getJohnInfo();
 		boolean expected = true;
-		boolean actual = new AutomationPracticeFormPageObject(driver, demoqaFormsUrl)
+		boolean actual = new AutomationPracticeFormPageObject(driver, baseUrl)
 		.openAutomationWebPage()
 		.inputFirstName(John.getFirstName())
 		.inputLastName(John.getLastName())

@@ -8,8 +8,6 @@ import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-import static org.hamcrest.Matchers.*;
-
 public class RestAssuredTest {
 
 
@@ -29,7 +27,7 @@ public class RestAssuredTest {
 		Response response = httpRequest.request(Method.GET, "/users/2");
 
 		//Assert
-		response.then().assertThat().content("data.email", equalTo("janet.weaver@reqres.in"));
+		//assert the response
 
 	}
 
