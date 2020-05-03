@@ -13,7 +13,6 @@ public class ChromeDriverManager extends DriverManager {
 	protected void createDriver() {
 		URL url = ClassLoader.getSystemResource("chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", url.getFile());
-		
 		ChromeOptions options = new ChromeOptions();
 		
 		Map<String, Object> prefs = new HashMap<String, Object>();

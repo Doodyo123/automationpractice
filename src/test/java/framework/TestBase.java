@@ -33,6 +33,7 @@ public abstract class TestBase {
 		Settings.implicitWaitMilliseconds, 
 		Settings.pageLoadTimeoutMilliseconds
 	})
+	
 	@BeforeTest
 	public void readSettings(
 			@Optional String baseUrl,

@@ -36,8 +36,8 @@ public class ConfigurationManager {
     	DocumentBuilderFactory factory;
         DocumentBuilder docBuilder;
         Document document;
-        settings = new HashMap<String, String>();
         
+        settings = new HashMap<String, String>();
         // guard here for missing file
 
         try {
